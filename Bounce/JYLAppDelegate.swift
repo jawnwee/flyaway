@@ -19,7 +19,6 @@ class OBAppDelegate: UIResponder, UIApplicationDelegate {
     self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
     self.window?.backgroundColor = UIColor.whiteColor()
     let mainVc: OBMainGameViewController = OBMainGameViewController()
-    mainVc.view.backgroundColor = UIColor.whiteColor()
     mainVc.view.frame = self.window!.frame
     self.window?.rootViewController = mainVc
     self.window?.makeKeyAndVisible()

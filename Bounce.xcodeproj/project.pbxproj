@@ -12,7 +12,8 @@
 		E208522F1C2A250F00BE8685 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852281C2A250F00BE8685 /* JYLMainGameViewController.swift */; };
 		E20852371C2A253200BE8685 /* BounceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852351C2A253200BE8685 /* BounceTests.swift */; };
 		E208523D1C2A506600BE8685 /* JYLBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208523C1C2A506600BE8685 /* JYLBall.swift */; };
-		E208523F1C2A506F00BE8685 /* JYLRope.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208523E1C2A506F00BE8685 /* JYLRope.swift */; };
+		E208523F1C2A506F00BE8685 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208523E1C2A506F00BE8685 /* JYLShard.swift */; };
+		E20852421C2A5B3B00BE8685 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852411C2A5B3B00BE8685 /* JYLBounceColors.swift */; };
 		E2CD41B31C0D857F00DEB4EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */; };
 		E2CD41B51C0EB9B400DEB4EB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B41C0EB9B400DEB4EB /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
@@ -35,7 +36,8 @@
 		E20852341C2A253200BE8685 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20852351C2A253200BE8685 /* BounceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceTests.swift; sourceTree = "<group>"; };
 		E208523C1C2A506600BE8685 /* JYLBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBall.swift; sourceTree = "<group>"; };
-		E208523E1C2A506F00BE8685 /* JYLRope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLRope.swift; sourceTree = "<group>"; };
+		E208523E1C2A506F00BE8685 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
+		E20852411C2A5B3B00BE8685 /* JYLBounceColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBounceColors.swift; sourceTree = "<group>"; };
 		E2CD41891C0BC2EA00DEB4EB /* Bounce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bounce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41A11C0BC2EA00DEB4EB /* Bounce.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bounce.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				E20852261C2A250F00BE8685 /* JYLAppDelegate.swift */,
 				E20852271C2A250F00BE8685 /* JYLMainGameScene.swift */,
 				E20852281C2A250F00BE8685 /* JYLMainGameViewController.swift */,
+				E20852411C2A5B3B00BE8685 /* JYLBounceColors.swift */,
 				E20852381C2A261700BE8685 /* Supported Files */,
 			);
 			path = Bounce;
@@ -101,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E208523C1C2A506600BE8685 /* JYLBall.swift */,
-				E208523E1C2A506F00BE8685 /* JYLRope.swift */,
+				E208523E1C2A506F00BE8685 /* JYLShard.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -231,7 +234,8 @@
 				E208522E1C2A250F00BE8685 /* JYLMainGameScene.swift in Sources */,
 				E208523D1C2A506600BE8685 /* JYLBall.swift in Sources */,
 				E208522F1C2A250F00BE8685 /* JYLMainGameViewController.swift in Sources */,
-				E208523F1C2A506F00BE8685 /* JYLRope.swift in Sources */,
+				E208523F1C2A506F00BE8685 /* JYLShard.swift in Sources */,
+				E20852421C2A5B3B00BE8685 /* JYLBounceColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +278,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -318,6 +323,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -340,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Bounce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.Bounce;
@@ -353,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Bounce/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.Bounce;
