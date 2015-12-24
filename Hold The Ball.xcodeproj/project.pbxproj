@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E208522D1C2A250F00BE8685 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852261C2A250F00BE8685 /* JYLAppDelegate.swift */; };
-		E208522E1C2A250F00BE8685 /* JYLMainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852271C2A250F00BE8685 /* JYLMainGameScene.swift */; };
-		E208522F1C2A250F00BE8685 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852281C2A250F00BE8685 /* JYLMainGameViewController.swift */; };
-		E20852371C2A253200BE8685 /* BounceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852351C2A253200BE8685 /* BounceTests.swift */; };
-		E208523D1C2A506600BE8685 /* JYLBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208523C1C2A506600BE8685 /* JYLBall.swift */; };
-		E208523F1C2A506F00BE8685 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208523E1C2A506F00BE8685 /* JYLShard.swift */; };
-		E20852421C2A5B3B00BE8685 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20852411C2A5B3B00BE8685 /* JYLBounceColors.swift */; };
-		E2CD41B31C0D857F00DEB4EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */; };
+		E264887B1C2BEED40089E253 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488721C2BEED40089E253 /* JYLAppDelegate.swift */; };
+		E264887C1C2BEED40089E253 /* JYLBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488731C2BEED40089E253 /* JYLBall.swift */; };
+		E264887D1C2BEED40089E253 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488741C2BEED40089E253 /* JYLBounceColors.swift */; };
+		E264887E1C2BEED40089E253 /* JYLMainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488751C2BEED40089E253 /* JYLMainGameScene.swift */; };
+		E264887F1C2BEED40089E253 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488761C2BEED40089E253 /* JYLMainGameViewController.swift */; };
+		E26488801C2BEED40089E253 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488771C2BEED40089E253 /* JYLShard.swift */; };
+		E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */; };
 		E2CD41B51C0EB9B400DEB4EB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B41C0EB9B400DEB4EB /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -29,17 +28,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E20852251C2A250F00BE8685 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E20852261C2A250F00BE8685 /* JYLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAppDelegate.swift; sourceTree = "<group>"; };
-		E20852271C2A250F00BE8685 /* JYLMainGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameScene.swift; sourceTree = "<group>"; };
-		E20852281C2A250F00BE8685 /* JYLMainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameViewController.swift; sourceTree = "<group>"; };
-		E20852341C2A253200BE8685 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E20852351C2A253200BE8685 /* BounceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceTests.swift; sourceTree = "<group>"; };
-		E208523C1C2A506600BE8685 /* JYLBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBall.swift; sourceTree = "<group>"; };
-		E208523E1C2A506F00BE8685 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
-		E20852411C2A5B3B00BE8685 /* JYLBounceColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBounceColors.swift; sourceTree = "<group>"; };
-		E2CD41891C0BC2EA00DEB4EB /* Bounce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bounce.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2CD41A11C0BC2EA00DEB4EB /* Bounce.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bounce.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26488711C2BEED40089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26488721C2BEED40089E253 /* JYLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAppDelegate.swift; sourceTree = "<group>"; };
+		E26488731C2BEED40089E253 /* JYLBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBall.swift; sourceTree = "<group>"; };
+		E26488741C2BEED40089E253 /* JYLBounceColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBounceColors.swift; sourceTree = "<group>"; };
+		E26488751C2BEED40089E253 /* JYLMainGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameScene.swift; sourceTree = "<group>"; };
+		E26488761C2BEED40089E253 /* JYLMainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameViewController.swift; sourceTree = "<group>"; };
+		E26488771C2BEED40089E253 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
+		E26488791C2BEED40089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2CD41891C0BC2EA00DEB4EB /* Hold The Ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hold The Ball.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CD41A11C0BC2EA00DEB4EB /* Hold The Ball.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hold The Ball.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2CD41B41C0EB9B400DEB4EB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,51 +60,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E20852241C2A250F00BE8685 /* Bounce */ = {
+		E26488701C2BEED40089E253 /* HoldTheBall */ = {
 			isa = PBXGroup;
 			children = (
-				E208523B1C2A504E00BE8685 /* Models */,
-				E20852261C2A250F00BE8685 /* JYLAppDelegate.swift */,
-				E20852271C2A250F00BE8685 /* JYLMainGameScene.swift */,
-				E20852281C2A250F00BE8685 /* JYLMainGameViewController.swift */,
-				E20852411C2A5B3B00BE8685 /* JYLBounceColors.swift */,
-				E20852381C2A261700BE8685 /* Supported Files */,
+				E26488821C2BEF2E0089E253 /* Model */,
+				E26488711C2BEED40089E253 /* Info.plist */,
+				E26488721C2BEED40089E253 /* JYLAppDelegate.swift */,
+				E26488741C2BEED40089E253 /* JYLBounceColors.swift */,
+				E26488751C2BEED40089E253 /* JYLMainGameScene.swift */,
+				E26488761C2BEED40089E253 /* JYLMainGameViewController.swift */,
 			);
-			path = Bounce;
+			path = HoldTheBall;
 			sourceTree = "<group>";
 		};
-		E20852331C2A253200BE8685 /* BounceTests */ = {
+		E26488781C2BEED40089E253 /* HoldTheBallTests */ = {
 			isa = PBXGroup;
 			children = (
-				E20852351C2A253200BE8685 /* BounceTests.swift */,
-				E20852391C2A262900BE8685 /* Supported Files */,
+				E26488791C2BEED40089E253 /* Info.plist */,
 			);
-			path = BounceTests;
+			path = HoldTheBallTests;
 			sourceTree = "<group>";
 		};
-		E20852381C2A261700BE8685 /* Supported Files */ = {
+		E26488821C2BEF2E0089E253 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E20852251C2A250F00BE8685 /* Info.plist */,
+				E26488731C2BEED40089E253 /* JYLBall.swift */,
+				E26488771C2BEED40089E253 /* JYLShard.swift */,
 			);
-			name = "Supported Files";
-			sourceTree = "<group>";
-		};
-		E20852391C2A262900BE8685 /* Supported Files */ = {
-			isa = PBXGroup;
-			children = (
-				E20852341C2A253200BE8685 /* Info.plist */,
-			);
-			name = "Supported Files";
-			sourceTree = "<group>";
-		};
-		E208523B1C2A504E00BE8685 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E208523C1C2A506600BE8685 /* JYLBall.swift */,
-				E208523E1C2A506F00BE8685 /* JYLShard.swift */,
-			);
-			name = Models;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		E2CD41801C0BC2EA00DEB4EB = {
@@ -114,8 +95,8 @@
 			children = (
 				E2CD41B41C0EB9B400DEB4EB /* Default-568h@2x.png */,
 				E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */,
-				E20852241C2A250F00BE8685 /* Bounce */,
-				E20852331C2A253200BE8685 /* BounceTests */,
+				E26488701C2BEED40089E253 /* HoldTheBall */,
+				E26488781C2BEED40089E253 /* HoldTheBallTests */,
 				E2CD418A1C0BC2EA00DEB4EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,8 +104,8 @@
 		E2CD418A1C0BC2EA00DEB4EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2CD41891C0BC2EA00DEB4EB /* Bounce.app */,
-				E2CD41A11C0BC2EA00DEB4EB /* Bounce.xctest */,
+				E2CD41891C0BC2EA00DEB4EB /* Hold The Ball.app */,
+				E2CD41A11C0BC2EA00DEB4EB /* Hold The Ball.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,9 +113,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E2CD41881C0BC2EA00DEB4EB /* Bounce */ = {
+		E2CD41881C0BC2EA00DEB4EB /* Hold The Ball */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Bounce" */;
+			buildConfigurationList = E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The Ball" */;
 			buildPhases = (
 				E2CD41851C0BC2EA00DEB4EB /* Sources */,
 				E2CD41861C0BC2EA00DEB4EB /* Frameworks */,
@@ -144,14 +125,14 @@
 			);
 			dependencies = (
 			);
-			name = Bounce;
+			name = "Hold The Ball";
 			productName = Skip;
-			productReference = E2CD41891C0BC2EA00DEB4EB /* Bounce.app */;
+			productReference = E2CD41891C0BC2EA00DEB4EB /* Hold The Ball.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E2CD41A01C0BC2EA00DEB4EB /* BounceTests */ = {
+		E2CD41A01C0BC2EA00DEB4EB /* Hold The BallTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "BounceTests" */;
+			buildConfigurationList = E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The BallTests" */;
 			buildPhases = (
 				E2CD419D1C0BC2EA00DEB4EB /* Sources */,
 				E2CD419E1C0BC2EA00DEB4EB /* Frameworks */,
@@ -162,9 +143,9 @@
 			dependencies = (
 				E2CD41A31C0BC2EA00DEB4EB /* PBXTargetDependency */,
 			);
-			name = BounceTests;
+			name = "Hold The BallTests";
 			productName = SkipTests;
-			productReference = E2CD41A11C0BC2EA00DEB4EB /* Bounce.xctest */;
+			productReference = E2CD41A11C0BC2EA00DEB4EB /* Hold The Ball.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +168,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Bounce" */;
+			buildConfigurationList = E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Hold The Ball" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -200,8 +181,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E2CD41881C0BC2EA00DEB4EB /* Bounce */,
-				E2CD41A01C0BC2EA00DEB4EB /* BounceTests */,
+				E2CD41881C0BC2EA00DEB4EB /* Hold The Ball */,
+				E2CD41A01C0BC2EA00DEB4EB /* Hold The BallTests */,
 			);
 		};
 /* End PBXProject section */
@@ -211,7 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2CD41B31C0D857F00DEB4EB /* Assets.xcassets in Resources */,
+				E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */,
 				E2CD41B51C0EB9B400DEB4EB /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,12 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E208522D1C2A250F00BE8685 /* JYLAppDelegate.swift in Sources */,
-				E208522E1C2A250F00BE8685 /* JYLMainGameScene.swift in Sources */,
-				E208523D1C2A506600BE8685 /* JYLBall.swift in Sources */,
-				E208522F1C2A250F00BE8685 /* JYLMainGameViewController.swift in Sources */,
-				E208523F1C2A506F00BE8685 /* JYLShard.swift in Sources */,
-				E20852421C2A5B3B00BE8685 /* JYLBounceColors.swift in Sources */,
+				E264887C1C2BEED40089E253 /* JYLBall.swift in Sources */,
+				E264887E1C2BEED40089E253 /* JYLMainGameScene.swift in Sources */,
+				E26488801C2BEED40089E253 /* JYLShard.swift in Sources */,
+				E264887B1C2BEED40089E253 /* JYLAppDelegate.swift in Sources */,
+				E264887F1C2BEED40089E253 /* JYLMainGameViewController.swift in Sources */,
+				E264887D1C2BEED40089E253 /* JYLBounceColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +224,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20852371C2A253200BE8685 /* BounceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +232,7 @@
 /* Begin PBXTargetDependency section */
 		E2CD41A31C0BC2EA00DEB4EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E2CD41881C0BC2EA00DEB4EB /* Bounce */;
+			target = E2CD41881C0BC2EA00DEB4EB /* Hold The Ball */;
 			targetProxy = E2CD41A21C0BC2EA00DEB4EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -347,10 +327,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = Bounce/Info.plist;
+				INFOPLIST_FILE = HoldTheBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wwwww.Bounce;
-				PRODUCT_NAME = Bounce;
+				PRODUCT_BUNDLE_IDENTIFIER = wwwww.HoldTheBall;
+				PRODUCT_NAME = "Hold The Ball";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -361,10 +341,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = Bounce/Info.plist;
+				INFOPLIST_FILE = HoldTheBall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wwwww.Bounce;
-				PRODUCT_NAME = Bounce;
+				PRODUCT_BUNDLE_IDENTIFIER = wwwww.HoldTheBall;
+				PRODUCT_NAME = "Hold The Ball";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -377,8 +357,8 @@
 				INFOPLIST_FILE = BounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.BounceTests;
-				PRODUCT_NAME = Bounce;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bounce.app/Bounce";
+				PRODUCT_NAME = "Hold The Ball";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hold The Ball.app/Hold The Ball";
 			};
 			name = Debug;
 		};
@@ -389,15 +369,15 @@
 				INFOPLIST_FILE = BounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.BounceTests;
-				PRODUCT_NAME = Bounce;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bounce.app/Bounce";
+				PRODUCT_NAME = "Hold The Ball";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hold The Ball.app/Hold The Ball";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Bounce" */ = {
+		E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Hold The Ball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2CD41A81C0BC2EA00DEB4EB /* Debug */,
@@ -406,7 +386,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Bounce" */ = {
+		E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The Ball" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2CD41AB1C0BC2EA00DEB4EB /* Debug */,
@@ -415,7 +395,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "BounceTests" */ = {
+		E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The BallTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2CD41AE1C0BC2EA00DEB4EB /* Debug */,

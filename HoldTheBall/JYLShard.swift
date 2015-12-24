@@ -1,6 +1,6 @@
 //
-//  JYLRope.swift
-//  Bounce
+//  JYLShard.swift
+// HoldTheBall
 //
 //  Created by John Lee on 12/22/15.
 //  Copyright © 2015 wwwww. All rights reserved.
@@ -15,7 +15,6 @@ enum ShardDirection: UInt32 {
 
 class JYLShard: SKSpriteNode {
   
-  
   init(direction: ShardDirection) {
     let shardTexture: SKTexture
     if direction == ShardDirection.left {
@@ -25,6 +24,8 @@ class JYLShard: SKSpriteNode {
     }
     super.init(texture: shardTexture, color: SKColor.clearColor(), size: shardTexture.size())
     self.physicsBody = SKPhysicsBody.init(texture: shardTexture, size: shardTexture.size())
+    self.physicsBody!.velocity = CGVectorMake(100, 0);
+    self.physicsBody!.affectedByGravity = false
   }
 
   required init?(coder aDecoder: NSCoder) {

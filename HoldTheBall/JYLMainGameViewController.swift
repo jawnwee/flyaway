@@ -22,7 +22,7 @@ class OBMainGameViewController: UIViewController {
     let skView = self.view as! SKView
     skView.showsFPS = true
     skView.showsNodeCount = true
-    skView.showsPhysics = false
+    skView.showsPhysics = true
     skView.ignoresSiblingOrder = true
     scene.size = self.view.frame.size
     scene.backgroundColor = JYLBounceColors.backgroundColor()

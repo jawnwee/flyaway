@@ -1,6 +1,6 @@
 //
 //  JYLBall.swift
-//  Bounce
+// HoldTheBall
 //
 //  Created by John Lee on 12/22/15.
 //  Copyright © 2015 wwwww. All rights reserved.
@@ -17,7 +17,7 @@ class JYLBall: SKSpriteNode {
     self.physicsBody?.allowsRotation = false
     self.physicsBody?.friction = 0
     self.physicsBody?.restitution = 0
-    self.physicsBody?.mass = 5
+    self.physicsBody?.mass = 0
   }
   
   required init(coder aDecoder: NSCoder) {

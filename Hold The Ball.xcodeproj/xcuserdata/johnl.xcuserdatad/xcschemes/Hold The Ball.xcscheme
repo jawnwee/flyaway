@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-               BuildableName = "Bounce.app"
-               BlueprintName = "Bounce"
-               ReferencedContainer = "container:Bounce.xcodeproj">
+               BuildableName = "Hold The Ball.app"
+               BlueprintName = "Hold The Ball"
+               ReferencedContainer = "container:Hold The Ball.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E2CD41A01C0BC2EA00DEB4EB"
-               BuildableName = "Bounce.xctest"
-               BlueprintName = "BounceTests"
-               ReferencedContainer = "container:Bounce.xcodeproj">
+               BuildableName = "Hold The Ball.xctest"
+               BlueprintName = "Hold The BallTests"
+               ReferencedContainer = "container:Hold The Ball.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,16 +43,16 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-            BuildableName = "Bounce.app"
-            BlueprintName = "Bounce"
-            ReferencedContainer = "container:Bounce.xcodeproj">
+            BuildableName = "Hold The Ball.app"
+            BlueprintName = "Hold The Ball"
+            ReferencedContainer = "container:Hold The Ball.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-            BuildableName = "Bounce.app"
-            BlueprintName = "Bounce"
-            ReferencedContainer = "container:Bounce.xcodeproj">
+            BuildableName = "Hold The Ball.app"
+            BlueprintName = "Hold The Ball"
+            ReferencedContainer = "container:Hold The Ball.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-            BuildableName = "Bounce.app"
-            BlueprintName = "Bounce"
-            ReferencedContainer = "container:Bounce.xcodeproj">
+            BuildableName = "Hold The Ball.app"
+            BlueprintName = "Hold The Ball"
+            ReferencedContainer = "container:Hold The Ball.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
