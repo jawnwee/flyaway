@@ -17,15 +17,27 @@
 		E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D91C2D220C0089E253 /* JYLSpikes.swift */; };
 		E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */; };
 		E2BEE9CF1C30703B00619149 /* JYLGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9CE1C30703B00619149 /* JYLGround.swift */; };
+		E2BEE9E71C30A09700619149 /* JYLBirdTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9E61C30A09700619149 /* JYLBirdTest.swift */; };
+		E2BEE9E81C30A22E00619149 /* JYLBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D41C2D220C0089E253 /* JYLBird.swift */; };
+		E2BEE9E91C30A36B00619149 /* JYLMainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */; };
+		E2BEE9EA1C30A36E00619149 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D51C2D220C0089E253 /* JYLBounceColors.swift */; };
+		E2BEE9EB1C30A37000619149 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */; };
+		E2BEE9EC1C30A37400619149 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */; };
+		E2BEE9ED1C30A37700619149 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D81C2D220C0089E253 /* JYLShard.swift */; };
+		E2BEE9EE1C30A37A00619149 /* JYLGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9CE1C30703B00619149 /* JYLGround.swift */; };
+		E2BEE9EF1C30A37C00619149 /* JYLSpikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D91C2D220C0089E253 /* JYLSpikes.swift */; };
+		E2BEE9F11C30B22200619149 /* EasyStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F01C30B22200619149 /* EasyStages.swift */; };
+		E2BEE9F31C30B26D00619149 /* MediumStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F21C30B26D00619149 /* MediumStages.swift */; };
+		E2BEE9F51C30B27300619149 /* HardStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F41C30B27300619149 /* HardStages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E2CD41A21C0BC2EA00DEB4EB /* PBXContainerItemProxy */ = {
+		E2BEE9E01C30A03A00619149 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E2CD41811C0BC2EA00DEB4EB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E2CD41881C0BC2EA00DEB4EB;
-			remoteInfo = Skip;
+			remoteInfo = "Fly Away";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -39,22 +51,26 @@
 		E26488D81C2D220C0089E253 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
 		E26488D91C2D220C0089E253 /* JYLSpikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLSpikes.swift; sourceTree = "<group>"; };
 		E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		E26488DC1C2D220C0089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2BEE9CE1C30703B00619149 /* JYLGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLGround.swift; sourceTree = "<group>"; };
+		E2BEE9DB1C30A03A00619149 /* Fly AwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fly AwayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2BEE9DF1C30A03A00619149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2BEE9E61C30A09700619149 /* JYLBirdTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBirdTest.swift; sourceTree = "<group>"; };
+		E2BEE9F01C30B22200619149 /* EasyStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyStages.swift; sourceTree = "<group>"; };
+		E2BEE9F21C30B26D00619149 /* MediumStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumStages.swift; sourceTree = "<group>"; };
+		E2BEE9F41C30B27300619149 /* HardStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardStages.swift; sourceTree = "<group>"; };
 		E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dodge The Shards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2CD41A11C0BC2EA00DEB4EB /* Dodge The Shards.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dodge The Shards.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E2CD41861C0BC2EA00DEB4EB /* Frameworks */ = {
+		E2BEE9D81C30A03A00619149 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2CD419E1C0BC2EA00DEB4EB /* Frameworks */ = {
+		E2CD41861C0BC2EA00DEB4EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,15 +95,6 @@
 			path = FlyAway;
 			sourceTree = "<group>";
 		};
-		E26488DB1C2D220C0089E253 /* FlyAwayTests */ = {
-			isa = PBXGroup;
-			children = (
-				E2BEE9D01C309E4000619149 /* ModelTests */,
-				E26488DC1C2D220C0089E253 /* Info.plist */,
-			);
-			path = FlyAwayTests;
-			sourceTree = "<group>";
-		};
 		E26488E71C2D247A0089E253 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +109,9 @@
 		E26488E81C2E24D10089E253 /* Stages */ = {
 			isa = PBXGroup;
 			children = (
+				E2BEE9F01C30B22200619149 /* EasyStages.swift */,
+				E2BEE9F21C30B26D00619149 /* MediumStages.swift */,
+				E2BEE9F41C30B27300619149 /* HardStages.swift */,
 			);
 			name = Stages;
 			sourceTree = "<group>";
@@ -109,8 +119,19 @@
 		E2BEE9D01C309E4000619149 /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				E2BEE9E61C30A09700619149 /* JYLBirdTest.swift */,
 			);
 			name = ModelTests;
+			path = ../FlyAwayTests;
+			sourceTree = "<group>";
+		};
+		E2BEE9DC1C30A03A00619149 /* Fly AwayTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2BEE9D01C309E4000619149 /* ModelTests */,
+				E2BEE9DF1C30A03A00619149 /* Info.plist */,
+			);
+			path = "Fly AwayTests";
 			sourceTree = "<group>";
 		};
 		E2CD41801C0BC2EA00DEB4EB = {
@@ -118,7 +139,7 @@
 			children = (
 				E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */,
 				E26488D11C2D220C0089E253 /* FlyAway */,
-				E26488DB1C2D220C0089E253 /* FlyAwayTests */,
+				E2BEE9DC1C30A03A00619149 /* Fly AwayTests */,
 				E2CD418A1C0BC2EA00DEB4EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */,
-				E2CD41A11C0BC2EA00DEB4EB /* Dodge The Shards.xctest */,
+				E2BEE9DB1C30A03A00619149 /* Fly AwayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +156,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E2BEE9DA1C30A03A00619149 /* Fly AwayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2BEE9E21C30A03A00619149 /* Build configuration list for PBXNativeTarget "Fly AwayTests" */;
+			buildPhases = (
+				E2BEE9D71C30A03A00619149 /* Sources */,
+				E2BEE9D81C30A03A00619149 /* Frameworks */,
+				E2BEE9D91C30A03A00619149 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2BEE9E11C30A03A00619149 /* PBXTargetDependency */,
+			);
+			name = "Fly AwayTests";
+			productName = "Fly AwayTests";
+			productReference = E2BEE9DB1C30A03A00619149 /* Fly AwayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E2CD41881C0BC2EA00DEB4EB /* Fly Away */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away" */;
@@ -152,41 +191,23 @@
 			productReference = E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E2CD41A01C0BC2EA00DEB4EB /* Fly Away Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away Tests" */;
-			buildPhases = (
-				E2CD419D1C0BC2EA00DEB4EB /* Sources */,
-				E2CD419E1C0BC2EA00DEB4EB /* Frameworks */,
-				E2CD419F1C0BC2EA00DEB4EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E2CD41A31C0BC2EA00DEB4EB /* PBXTargetDependency */,
-			);
-			name = "Fly Away Tests";
-			productName = SkipTests;
-			productReference = E2CD41A11C0BC2EA00DEB4EB /* Dodge The Shards.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E2CD41811C0BC2EA00DEB4EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = wwwww;
 				TargetAttributes = {
+					E2BEE9DA1C30A03A00619149 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E2CD41881C0BC2EA00DEB4EB;
+					};
 					E2CD41881C0BC2EA00DEB4EB = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 6UN3N9H6B4;
-					};
-					E2CD41A01C0BC2EA00DEB4EB = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = E2CD41881C0BC2EA00DEB4EB;
 					};
 				};
 			};
@@ -204,12 +225,19 @@
 			projectRoot = "";
 			targets = (
 				E2CD41881C0BC2EA00DEB4EB /* Fly Away */,
-				E2CD41A01C0BC2EA00DEB4EB /* Fly Away Tests */,
+				E2BEE9DA1C30A03A00619149 /* Fly AwayTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E2BEE9D91C30A03A00619149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2CD41871C0BC2EA00DEB4EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,16 +247,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2CD419F1C0BC2EA00DEB4EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E2BEE9D71C30A03A00619149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2BEE9F31C30B26D00619149 /* MediumStages.swift in Sources */,
+				E2BEE9EE1C30A37A00619149 /* JYLGround.swift in Sources */,
+				E2BEE9E81C30A22E00619149 /* JYLBird.swift in Sources */,
+				E2BEE9ED1C30A37700619149 /* JYLShard.swift in Sources */,
+				E2BEE9EF1C30A37C00619149 /* JYLSpikes.swift in Sources */,
+				E2BEE9F11C30B22200619149 /* EasyStages.swift in Sources */,
+				E2BEE9EA1C30A36E00619149 /* JYLBounceColors.swift in Sources */,
+				E2BEE9EB1C30A37000619149 /* JYLAppDelegate.swift in Sources */,
+				E2BEE9E71C30A09700619149 /* JYLBirdTest.swift in Sources */,
+				E2BEE9F51C30B27300619149 /* HardStages.swift in Sources */,
+				E2BEE9E91C30A36B00619149 /* JYLMainGameScene.swift in Sources */,
+				E2BEE9EC1C30A37400619149 /* JYLMainGameViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2CD41851C0BC2EA00DEB4EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,24 +284,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2CD419D1C0BC2EA00DEB4EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E2CD41A31C0BC2EA00DEB4EB /* PBXTargetDependency */ = {
+		E2BEE9E11C30A03A00619149 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E2CD41881C0BC2EA00DEB4EB /* Fly Away */;
-			targetProxy = E2CD41A21C0BC2EA00DEB4EB /* PBXContainerItemProxy */;
+			targetProxy = E2BEE9E01C30A03A00619149 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E2BEE9E31C30A03A00619149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Fly AwayTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wwwww.Fly-AwayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fly Away.app/Fly Away";
+			};
+			name = Debug;
+		};
+		E2BEE9E41C30A03A00619149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Fly AwayTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "wwwww.Fly-AwayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fly Away.app/Fly Away";
+			};
+			name = Release;
+		};
 		E2CD41A81C0BC2EA00DEB4EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,34 +433,17 @@
 			};
 			name = Release;
 		};
-		E2CD41AE1C0BC2EA00DEB4EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = BounceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wwwww.BounceTests;
-				PRODUCT_NAME = "Dodge The Shards";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fly Away.app/Fly Away";
-			};
-			name = Debug;
-		};
-		E2CD41AF1C0BC2EA00DEB4EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = BounceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wwwww.BounceTests;
-				PRODUCT_NAME = "Dodge The Shards";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fly Away.app/Fly Away";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E2BEE9E21C30A03A00619149 /* Build configuration list for PBXNativeTarget "Fly AwayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2BEE9E31C30A03A00619149 /* Debug */,
+				E2BEE9E41C30A03A00619149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Fly Away" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -415,15 +458,6 @@
 			buildConfigurations = (
 				E2CD41AB1C0BC2EA00DEB4EB /* Debug */,
 				E2CD41AC1C0BC2EA00DEB4EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E2CD41AE1C0BC2EA00DEB4EB /* Debug */,
-				E2CD41AF1C0BC2EA00DEB4EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

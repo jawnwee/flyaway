@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Fly Away.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E2BEE9DA1C30A03A00619149"
+               BuildableName = "Fly AwayTests.xctest"
+               BlueprintName = "Fly AwayTests"
+               ReferencedContainer = "container:Fly Away.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
