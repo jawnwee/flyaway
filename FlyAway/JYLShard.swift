@@ -1,6 +1,6 @@
 //
 //  JYLShard.swift
-// HoldTheBall
+// DodgeTheShards
 //
 //  Created by John Lee on 12/22/15.
 //  Copyright © 2015 wwwww. All rights reserved.
@@ -24,8 +24,15 @@ class JYLShard: SKSpriteNode {
     }
     super.init(texture: shardTexture, color: SKColor.clearColor(), size: shardTexture.size())
     self.physicsBody = SKPhysicsBody.init(texture: shardTexture, size: shardTexture.size())
-    self.physicsBody!.velocity = CGVectorMake(100, 0);
+    if direction == ShardDirection.left {
+      self.physicsBody!.velocity = CGVectorMake(100, 0)
+    } else {
+      self.physicsBody!.velocity = CGVectorMake(-100, 0)
+    }
     self.physicsBody!.affectedByGravity = false
+    self.physicsBody?.categoryBitMask = ColliderType.shard.rawValue
+    self.physicsBody?.collisionBitMask = ColliderType.bird.rawValue
+    self.physicsBody?.contactTestBitMask = ColliderType.bird.rawValue
   }
 
   required init?(coder aDecoder: NSCoder) {

@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E264887B1C2BEED40089E253 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488721C2BEED40089E253 /* JYLAppDelegate.swift */; };
-		E264887C1C2BEED40089E253 /* JYLBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488731C2BEED40089E253 /* JYLBall.swift */; };
-		E264887D1C2BEED40089E253 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488741C2BEED40089E253 /* JYLBounceColors.swift */; };
-		E264887E1C2BEED40089E253 /* JYLMainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488751C2BEED40089E253 /* JYLMainGameScene.swift */; };
-		E264887F1C2BEED40089E253 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488761C2BEED40089E253 /* JYLMainGameViewController.swift */; };
-		E26488801C2BEED40089E253 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488771C2BEED40089E253 /* JYLShard.swift */; };
 		E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */; };
-		E2CD41B51C0EB9B400DEB4EB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B41C0EB9B400DEB4EB /* Default-568h@2x.png */; };
+		E26488DE1C2D220C0089E253 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */; };
+		E26488DF1C2D220C0089E253 /* JYLBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D41C2D220C0089E253 /* JYLBird.swift */; };
+		E26488E01C2D220C0089E253 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D51C2D220C0089E253 /* JYLBounceColors.swift */; };
+		E26488E11C2D220C0089E253 /* JYLMainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */; };
+		E26488E21C2D220C0089E253 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */; };
+		E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D81C2D220C0089E253 /* JYLShard.swift */; };
+		E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D91C2D220C0089E253 /* JYLSpikes.swift */; };
+		E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */; };
+		E2BEE9CF1C30703B00619149 /* JYLGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9CE1C30703B00619149 /* JYLGround.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,18 +30,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E26488711C2BEED40089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E26488721C2BEED40089E253 /* JYLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAppDelegate.swift; sourceTree = "<group>"; };
-		E26488731C2BEED40089E253 /* JYLBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBall.swift; sourceTree = "<group>"; };
-		E26488741C2BEED40089E253 /* JYLBounceColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBounceColors.swift; sourceTree = "<group>"; };
-		E26488751C2BEED40089E253 /* JYLMainGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameScene.swift; sourceTree = "<group>"; };
-		E26488761C2BEED40089E253 /* JYLMainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameViewController.swift; sourceTree = "<group>"; };
-		E26488771C2BEED40089E253 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
-		E26488791C2BEED40089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2CD41891C0BC2EA00DEB4EB /* Hold The Ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hold The Ball.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2CD41A11C0BC2EA00DEB4EB /* Hold The Ball.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hold The Ball.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26488D21C2D220C0089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAppDelegate.swift; sourceTree = "<group>"; };
+		E26488D41C2D220C0089E253 /* JYLBird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBird.swift; sourceTree = "<group>"; };
+		E26488D51C2D220C0089E253 /* JYLBounceColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBounceColors.swift; sourceTree = "<group>"; };
+		E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameScene.swift; sourceTree = "<group>"; };
+		E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameViewController.swift; sourceTree = "<group>"; };
+		E26488D81C2D220C0089E253 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
+		E26488D91C2D220C0089E253 /* JYLSpikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLSpikes.swift; sourceTree = "<group>"; };
+		E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E26488DC1C2D220C0089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2BEE9CE1C30703B00619149 /* JYLGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLGround.swift; sourceTree = "<group>"; };
+		E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dodge The Shards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CD41A11C0BC2EA00DEB4EB /* Dodge The Shards.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dodge The Shards.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E2CD41B41C0EB9B400DEB4EB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,43 +64,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E26488701C2BEED40089E253 /* HoldTheBall */ = {
+		E26488D11C2D220C0089E253 /* FlyAway */ = {
 			isa = PBXGroup;
 			children = (
-				E26488821C2BEF2E0089E253 /* Model */,
-				E26488711C2BEED40089E253 /* Info.plist */,
-				E26488721C2BEED40089E253 /* JYLAppDelegate.swift */,
-				E26488741C2BEED40089E253 /* JYLBounceColors.swift */,
-				E26488751C2BEED40089E253 /* JYLMainGameScene.swift */,
-				E26488761C2BEED40089E253 /* JYLMainGameViewController.swift */,
+				E26488E81C2E24D10089E253 /* Stages */,
+				E26488E71C2D247A0089E253 /* Models */,
+				E26488D21C2D220C0089E253 /* Info.plist */,
+				E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */,
+				E26488D51C2D220C0089E253 /* JYLBounceColors.swift */,
+				E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */,
+				E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */,
+				E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */,
 			);
-			path = HoldTheBall;
+			path = FlyAway;
 			sourceTree = "<group>";
 		};
-		E26488781C2BEED40089E253 /* HoldTheBallTests */ = {
+		E26488DB1C2D220C0089E253 /* FlyAwayTests */ = {
 			isa = PBXGroup;
 			children = (
-				E26488791C2BEED40089E253 /* Info.plist */,
+				E2BEE9D01C309E4000619149 /* ModelTests */,
+				E26488DC1C2D220C0089E253 /* Info.plist */,
 			);
-			path = HoldTheBallTests;
+			path = FlyAwayTests;
 			sourceTree = "<group>";
 		};
-		E26488821C2BEF2E0089E253 /* Model */ = {
+		E26488E71C2D247A0089E253 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E26488731C2BEED40089E253 /* JYLBall.swift */,
-				E26488771C2BEED40089E253 /* JYLShard.swift */,
+				E26488D41C2D220C0089E253 /* JYLBird.swift */,
+				E26488D81C2D220C0089E253 /* JYLShard.swift */,
+				E26488D91C2D220C0089E253 /* JYLSpikes.swift */,
+				E2BEE9CE1C30703B00619149 /* JYLGround.swift */,
 			);
-			name = Model;
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E26488E81C2E24D10089E253 /* Stages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Stages;
+			sourceTree = "<group>";
+		};
+		E2BEE9D01C309E4000619149 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ModelTests;
 			sourceTree = "<group>";
 		};
 		E2CD41801C0BC2EA00DEB4EB = {
 			isa = PBXGroup;
 			children = (
-				E2CD41B41C0EB9B400DEB4EB /* Default-568h@2x.png */,
 				E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */,
-				E26488701C2BEED40089E253 /* HoldTheBall */,
-				E26488781C2BEED40089E253 /* HoldTheBallTests */,
+				E26488D11C2D220C0089E253 /* FlyAway */,
+				E26488DB1C2D220C0089E253 /* FlyAwayTests */,
 				E2CD418A1C0BC2EA00DEB4EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,8 +126,8 @@
 		E2CD418A1C0BC2EA00DEB4EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2CD41891C0BC2EA00DEB4EB /* Hold The Ball.app */,
-				E2CD41A11C0BC2EA00DEB4EB /* Hold The Ball.xctest */,
+				E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */,
+				E2CD41A11C0BC2EA00DEB4EB /* Dodge The Shards.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E2CD41881C0BC2EA00DEB4EB /* Hold The Ball */ = {
+		E2CD41881C0BC2EA00DEB4EB /* Fly Away */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The Ball" */;
+			buildConfigurationList = E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away" */;
 			buildPhases = (
 				E2CD41851C0BC2EA00DEB4EB /* Sources */,
 				E2CD41861C0BC2EA00DEB4EB /* Frameworks */,
@@ -125,14 +147,14 @@
 			);
 			dependencies = (
 			);
-			name = "Hold The Ball";
+			name = "Fly Away";
 			productName = Skip;
-			productReference = E2CD41891C0BC2EA00DEB4EB /* Hold The Ball.app */;
+			productReference = E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E2CD41A01C0BC2EA00DEB4EB /* Hold The BallTests */ = {
+		E2CD41A01C0BC2EA00DEB4EB /* Fly Away Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The BallTests" */;
+			buildConfigurationList = E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away Tests" */;
 			buildPhases = (
 				E2CD419D1C0BC2EA00DEB4EB /* Sources */,
 				E2CD419E1C0BC2EA00DEB4EB /* Frameworks */,
@@ -143,9 +165,9 @@
 			dependencies = (
 				E2CD41A31C0BC2EA00DEB4EB /* PBXTargetDependency */,
 			);
-			name = "Hold The BallTests";
+			name = "Fly Away Tests";
 			productName = SkipTests;
-			productReference = E2CD41A11C0BC2EA00DEB4EB /* Hold The Ball.xctest */;
+			productReference = E2CD41A11C0BC2EA00DEB4EB /* Dodge The Shards.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Hold The Ball" */;
+			buildConfigurationList = E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Fly Away" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -181,8 +203,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E2CD41881C0BC2EA00DEB4EB /* Hold The Ball */,
-				E2CD41A01C0BC2EA00DEB4EB /* Hold The BallTests */,
+				E2CD41881C0BC2EA00DEB4EB /* Fly Away */,
+				E2CD41A01C0BC2EA00DEB4EB /* Fly Away Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -192,8 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */,
 				E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */,
-				E2CD41B51C0EB9B400DEB4EB /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,12 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E264887C1C2BEED40089E253 /* JYLBall.swift in Sources */,
-				E264887E1C2BEED40089E253 /* JYLMainGameScene.swift in Sources */,
-				E26488801C2BEED40089E253 /* JYLShard.swift in Sources */,
-				E264887B1C2BEED40089E253 /* JYLAppDelegate.swift in Sources */,
-				E264887F1C2BEED40089E253 /* JYLMainGameViewController.swift in Sources */,
-				E264887D1C2BEED40089E253 /* JYLBounceColors.swift in Sources */,
+				E2BEE9CF1C30703B00619149 /* JYLGround.swift in Sources */,
+				E26488DF1C2D220C0089E253 /* JYLBird.swift in Sources */,
+				E26488E11C2D220C0089E253 /* JYLMainGameScene.swift in Sources */,
+				E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */,
+				E26488DE1C2D220C0089E253 /* JYLAppDelegate.swift in Sources */,
+				E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */,
+				E26488E21C2D220C0089E253 /* JYLMainGameViewController.swift in Sources */,
+				E26488E01C2D220C0089E253 /* JYLBounceColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +256,7 @@
 /* Begin PBXTargetDependency section */
 		E2CD41A31C0BC2EA00DEB4EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E2CD41881C0BC2EA00DEB4EB /* Hold The Ball */;
+			target = E2CD41881C0BC2EA00DEB4EB /* Fly Away */;
 			targetProxy = E2CD41A21C0BC2EA00DEB4EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -327,10 +351,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = HoldTheBall/Info.plist;
+				INFOPLIST_FILE = FlyAway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wwwww.HoldTheBall;
-				PRODUCT_NAME = "Hold The Ball";
+				PRODUCT_BUNDLE_IDENTIFIER = wwwww.FlyAway;
+				PRODUCT_NAME = "Fly Away";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -341,10 +365,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = HoldTheBall/Info.plist;
+				INFOPLIST_FILE = FlyAway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wwwww.HoldTheBall;
-				PRODUCT_NAME = "Hold The Ball";
+				PRODUCT_BUNDLE_IDENTIFIER = wwwww.FlyAway;
+				PRODUCT_NAME = "Fly Away";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -357,8 +381,8 @@
 				INFOPLIST_FILE = BounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.BounceTests;
-				PRODUCT_NAME = "Hold The Ball";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hold The Ball.app/Hold The Ball";
+				PRODUCT_NAME = "Dodge The Shards";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fly Away.app/Fly Away";
 			};
 			name = Debug;
 		};
@@ -369,15 +393,15 @@
 				INFOPLIST_FILE = BounceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.BounceTests;
-				PRODUCT_NAME = "Hold The Ball";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hold The Ball.app/Hold The Ball";
+				PRODUCT_NAME = "Dodge The Shards";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fly Away.app/Fly Away";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Hold The Ball" */ = {
+		E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Fly Away" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2CD41A81C0BC2EA00DEB4EB /* Debug */,
@@ -386,7 +410,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The Ball" */ = {
+		E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2CD41AB1C0BC2EA00DEB4EB /* Debug */,
@@ -395,7 +419,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Hold The BallTests" */ = {
+		E2CD41AD1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2CD41AE1C0BC2EA00DEB4EB /* Debug */,

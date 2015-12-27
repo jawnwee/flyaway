@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class OBMainGameViewController: UIViewController {
+class JYLMainGameViewController: UIViewController {
   
   override func loadView() {
     self.view = SKView(frame: UIScreen.mainScreen().bounds)
@@ -18,14 +18,11 @@ class OBMainGameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let sceneSize = CGSizeMake(self.view.frame.width, self.view.frame.height)
-    let scene = OBMainGameScene(size:sceneSize)
+    let scene = JYLMainGameScene(size:sceneSize)
     let skView = self.view as! SKView
     skView.showsFPS = true
     skView.showsNodeCount = true
-    skView.showsPhysics = true
-    skView.ignoresSiblingOrder = true
-    scene.size = self.view.frame.size
-    scene.backgroundColor = JYLBounceColors.backgroundColor()
+    skView.showsPhysics = false
     skView.presentScene(scene)
   }
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-               BuildableName = "Hold The Ball.app"
-               BlueprintName = "Hold The Ball"
-               ReferencedContainer = "container:Hold The Ball.xcodeproj">
+               BuildableName = "Fly Away.app"
+               BlueprintName = "Fly Away"
+               ReferencedContainer = "container:Fly Away.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E2CD41A01C0BC2EA00DEB4EB"
-               BuildableName = "Hold The Ball.xctest"
-               BlueprintName = "Hold The BallTests"
-               ReferencedContainer = "container:Hold The Ball.xcodeproj">
+               BuildableName = "Dodge The Shards.xctest"
+               BlueprintName = "Fly Away Tests"
+               ReferencedContainer = "container:Fly Away.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-            BuildableName = "Hold The Ball.app"
-            BlueprintName = "Hold The Ball"
-            ReferencedContainer = "container:Hold The Ball.xcodeproj">
+            BuildableName = "Fly Away.app"
+            BlueprintName = "Fly Away"
+            ReferencedContainer = "container:Fly Away.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-            BuildableName = "Hold The Ball.app"
-            BlueprintName = "Hold The Ball"
-            ReferencedContainer = "container:Hold The Ball.xcodeproj">
+            BuildableName = "Fly Away.app"
+            BlueprintName = "Fly Away"
+            ReferencedContainer = "container:Fly Away.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E2CD41881C0BC2EA00DEB4EB"
-            BuildableName = "Hold The Ball.app"
-            BlueprintName = "Hold The Ball"
-            ReferencedContainer = "container:Hold The Ball.xcodeproj">
+            BuildableName = "Fly Away.app"
+            BlueprintName = "Fly Away"
+            ReferencedContainer = "container:Fly Away.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
