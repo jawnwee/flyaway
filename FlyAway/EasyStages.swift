@@ -10,4 +10,16 @@ import Foundation
 
 class EasyStages: NSObject {
   
+  class func runRandomStage() {
+    
+  }
+  
+  private func easyStage1() {
+    
+  }
+  
+  private func easyStage2() {
+    
+  }
+  
 }

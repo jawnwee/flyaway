@@ -29,6 +29,11 @@
 		E2BEE9F11C30B22200619149 /* EasyStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F01C30B22200619149 /* EasyStages.swift */; };
 		E2BEE9F31C30B26D00619149 /* MediumStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F21C30B26D00619149 /* MediumStages.swift */; };
 		E2BEE9F51C30B27300619149 /* HardStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F41C30B27300619149 /* HardStages.swift */; };
+		E2BEE9F61C30BF6000619149 /* MediumStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F21C30B26D00619149 /* MediumStages.swift */; };
+		E2BEE9F71C30BF6300619149 /* EasyStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F01C30B22200619149 /* EasyStages.swift */; };
+		E2BEE9F81C30BF6600619149 /* HardStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F41C30B27300619149 /* HardStages.swift */; };
+		E2BEE9FA1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
+		E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,7 @@
 		E2BEE9F01C30B22200619149 /* EasyStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyStages.swift; sourceTree = "<group>"; };
 		E2BEE9F21C30B26D00619149 /* MediumStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumStages.swift; sourceTree = "<group>"; };
 		E2BEE9F41C30B27300619149 /* HardStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardStages.swift; sourceTree = "<group>"; };
+		E2BEE9F91C30C0C300619149 /* StageRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageRunner.swift; sourceTree = "<group>"; };
 		E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dodge The Shards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +118,7 @@
 				E2BEE9F01C30B22200619149 /* EasyStages.swift */,
 				E2BEE9F21C30B26D00619149 /* MediumStages.swift */,
 				E2BEE9F41C30B27300619149 /* HardStages.swift */,
+				E2BEE9F91C30C0C300619149 /* StageRunner.swift */,
 			);
 			name = Stages;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 				E2BEE9E81C30A22E00619149 /* JYLBird.swift in Sources */,
 				E2BEE9ED1C30A37700619149 /* JYLShard.swift in Sources */,
 				E2BEE9EF1C30A37C00619149 /* JYLSpikes.swift in Sources */,
+				E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */,
 				E2BEE9F11C30B22200619149 /* EasyStages.swift in Sources */,
 				E2BEE9EA1C30A36E00619149 /* JYLBounceColors.swift in Sources */,
 				E2BEE9EB1C30A37000619149 /* JYLAppDelegate.swift in Sources */,
@@ -273,14 +281,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2BEE9F81C30BF6600619149 /* HardStages.swift in Sources */,
 				E2BEE9CF1C30703B00619149 /* JYLGround.swift in Sources */,
 				E26488DF1C2D220C0089E253 /* JYLBird.swift in Sources */,
 				E26488E11C2D220C0089E253 /* JYLMainGameScene.swift in Sources */,
 				E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */,
+				E2BEE9F71C30BF6300619149 /* EasyStages.swift in Sources */,
 				E26488DE1C2D220C0089E253 /* JYLAppDelegate.swift in Sources */,
 				E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */,
 				E26488E21C2D220C0089E253 /* JYLMainGameViewController.swift in Sources */,
 				E26488E01C2D220C0089E253 /* JYLBounceColors.swift in Sources */,
+				E2BEE9FA1C30C0C300619149 /* StageRunner.swift in Sources */,
+				E2BEE9F61C30BF6000619149 /* MediumStages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
