@@ -16,6 +16,8 @@
 		E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D81C2D220C0089E253 /* JYLShard.swift */; };
 		E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D91C2D220C0089E253 /* JYLSpikes.swift */; };
 		E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */; };
+		E2A4F1341C34B64C00F72CEB /* JYLWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9FC1C3481C200619149 /* JYLWall.swift */; };
+		E2A4F1371C35C16C00F72CEB /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A4F1361C35C12600F72CEB /* Dosis-SemiBold.ttf */; };
 		E2BEE9CF1C30703B00619149 /* JYLGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9CE1C30703B00619149 /* JYLGround.swift */; };
 		E2BEE9E71C30A09700619149 /* JYLBirdTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9E61C30A09700619149 /* JYLBirdTest.swift */; };
 		E2BEE9E81C30A22E00619149 /* JYLBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D41C2D220C0089E253 /* JYLBird.swift */; };
@@ -34,6 +36,8 @@
 		E2BEE9F81C30BF6600619149 /* HardStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F41C30B27300619149 /* HardStages.swift */; };
 		E2BEE9FA1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
 		E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
+		E2BEE9FD1C3481C200619149 /* JYLWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9FC1C3481C200619149 /* JYLWall.swift */; };
+		E2F500C81C37296500900B2F /* SleepingBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E2F500C71C37296500900B2F /* SleepingBird.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,7 @@
 		E26488D81C2D220C0089E253 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
 		E26488D91C2D220C0089E253 /* JYLSpikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLSpikes.swift; sourceTree = "<group>"; };
 		E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E2A4F1361C35C12600F72CEB /* Dosis-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.ttf"; sourceTree = "<group>"; };
 		E2BEE9CE1C30703B00619149 /* JYLGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLGround.swift; sourceTree = "<group>"; };
 		E2BEE9DB1C30A03A00619149 /* Fly AwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fly AwayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BEE9DF1C30A03A00619149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,8 +69,10 @@
 		E2BEE9F21C30B26D00619149 /* MediumStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumStages.swift; sourceTree = "<group>"; };
 		E2BEE9F41C30B27300619149 /* HardStages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardStages.swift; sourceTree = "<group>"; };
 		E2BEE9F91C30C0C300619149 /* StageRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageRunner.swift; sourceTree = "<group>"; };
-		E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dodge The Shards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2BEE9FC1C3481C200619149 /* JYLWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLWall.swift; sourceTree = "<group>"; };
+		E2CD41891C0BC2EA00DEB4EB /* Fly Away.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fly Away.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2F500C71C37296500900B2F /* SleepingBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SleepingBird.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +96,9 @@
 		E26488D11C2D220C0089E253 /* FlyAway */ = {
 			isa = PBXGroup;
 			children = (
+				E2A4F1351C35C11B00F72CEB /* SupportingFiles */,
 				E26488E81C2E24D10089E253 /* Stages */,
 				E26488E71C2D247A0089E253 /* Models */,
-				E26488D21C2D220C0089E253 /* Info.plist */,
 				E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */,
 				E26488D51C2D220C0089E253 /* JYLBounceColors.swift */,
 				E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */,
@@ -108,6 +115,7 @@
 				E26488D81C2D220C0089E253 /* JYLShard.swift */,
 				E26488D91C2D220C0089E253 /* JYLSpikes.swift */,
 				E2BEE9CE1C30703B00619149 /* JYLGround.swift */,
+				E2BEE9FC1C3481C200619149 /* JYLWall.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -121,6 +129,15 @@
 				E2BEE9F91C30C0C300619149 /* StageRunner.swift */,
 			);
 			name = Stages;
+			sourceTree = "<group>";
+		};
+		E2A4F1351C35C11B00F72CEB /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4F1361C35C12600F72CEB /* Dosis-SemiBold.ttf */,
+				E26488D21C2D220C0089E253 /* Info.plist */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		E2BEE9D01C309E4000619149 /* ModelTests */ = {
@@ -144,7 +161,7 @@
 		E2CD41801C0BC2EA00DEB4EB = {
 			isa = PBXGroup;
 			children = (
-				E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */,
+				E2F500C91C37296A00900B2F /* Assets */,
 				E26488D11C2D220C0089E253 /* FlyAway */,
 				E2BEE9DC1C30A03A00619149 /* Fly AwayTests */,
 				E2CD418A1C0BC2EA00DEB4EB /* Products */,
@@ -154,10 +171,19 @@
 		E2CD418A1C0BC2EA00DEB4EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */,
+				E2CD41891C0BC2EA00DEB4EB /* Fly Away.app */,
 				E2BEE9DB1C30A03A00619149 /* Fly AwayTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E2F500C91C37296A00900B2F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */,
+				E2F500C71C37296500900B2F /* SleepingBird.atlas */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +221,7 @@
 			);
 			name = "Fly Away";
 			productName = Skip;
-			productReference = E2CD41891C0BC2EA00DEB4EB /* Dodge The Shards.app */;
+			productReference = E2CD41891C0BC2EA00DEB4EB /* Fly Away.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -249,6 +275,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A4F1371C35C16C00F72CEB /* Dosis-SemiBold.ttf in Resources */,
+				E2F500C81C37296500900B2F /* SleepingBird.atlas in Resources */,
 				E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */,
 				E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */,
 			);
@@ -274,6 +302,7 @@
 				E2BEE9F51C30B27300619149 /* HardStages.swift in Sources */,
 				E2BEE9E91C30A36B00619149 /* JYLMainGameScene.swift in Sources */,
 				E2BEE9EC1C30A37400619149 /* JYLMainGameViewController.swift in Sources */,
+				E2A4F1341C34B64C00F72CEB /* JYLWall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +322,7 @@
 				E26488E01C2D220C0089E253 /* JYLBounceColors.swift in Sources */,
 				E2BEE9FA1C30C0C300619149 /* StageRunner.swift in Sources */,
 				E2BEE9F61C30BF6000619149 /* MediumStages.swift in Sources */,
+				E2BEE9FD1C3481C200619149 /* JYLWall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -410,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -424,6 +454,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FlyAway/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.FlyAway;
 				PRODUCT_NAME = "Fly Away";
@@ -438,6 +469,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FlyAway/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.FlyAway;
 				PRODUCT_NAME = "Fly Away";
@@ -455,6 +487,7 @@
 				E2BEE9E41C30A03A00619149 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E2CD41841C0BC2EA00DEB4EB /* Build configuration list for PBXProject "Fly Away" */ = {
 			isa = XCConfigurationList;

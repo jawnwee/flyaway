@@ -14,9 +14,10 @@ class JYLBird: SKSpriteNode {
     let texture = SKTexture.init(imageNamed: "bird")
     super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
     self.physicsBody = SKPhysicsBody.init(texture: texture, size: texture.size())
-    self.physicsBody?.allowsRotation = false
+    self.physicsBody?.allowsRotation = true
     self.physicsBody?.friction = 0
     self.physicsBody?.restitution = 0
+    self.physicsBody?.linearDamping = 0.8
     self.physicsBody?.mass = 0
     self.physicsBody?.categoryBitMask = ColliderType.bird.rawValue
     self.physicsBody?.collisionBitMask =
@@ -25,6 +26,7 @@ class JYLBird: SKSpriteNode {
       | ColliderType.spikes.rawValue)
     self.physicsBody?.contactTestBitMask =
       (ColliderType.shard.rawValue | ColliderType.spikes.rawValue)
+    self.setScale(scaleFactor)
   }
   
   required init(coder aDecoder: NSCoder) {

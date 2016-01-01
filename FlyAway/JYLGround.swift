@@ -10,10 +10,10 @@ import SpriteKit
 
 class JYLGround: SKSpriteNode {
   
-  init(withHeight height: CGFloat) {
+  init(withWidth width: CGFloat) {
     super.init(texture: nil, color: SKColor.clearColor(), size: CGSizeZero)
     self.physicsBody = SKPhysicsBody.init(edgeLoopFromRect:
-      CGRectMake(0, 0, height, startPositionYDifference))
+      CGRectMake(0, 0, width, startPositionYDifference))
     self.physicsBody?.categoryBitMask = ColliderType.ground.rawValue
     self.physicsBody?.collisionBitMask = ColliderType.bird.rawValue
     self.physicsBody?.contactTestBitMask = ColliderType.bird.rawValue
