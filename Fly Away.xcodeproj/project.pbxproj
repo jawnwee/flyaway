@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2348CC91C39AF1B009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
+		E2348CCA1C39E69E009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
+		E2348CCC1C3A4715009C4C78 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CCB1C3A4715009C4C78 /* StoreKit.framework */; };
+		E2348CCE1C3A4728009C4C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CCD1C3A4728009C4C78 /* Foundation.framework */; };
+		E2348CD01C3A472F009C4C78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CCF1C3A472F009C4C78 /* CoreGraphics.framework */; };
+		E2348CD21C3A4737009C4C78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CD11C3A4737009C4C78 /* UIKit.framework */; };
+		E2348CD81C3A4A5D009C4C78 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CD71C3A4A5D009C4C78 /* Chartboost.framework */; };
 		E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */; };
 		E26488DE1C2D220C0089E253 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */; };
 		E26488DF1C2D220C0089E253 /* JYLBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D41C2D220C0089E253 /* JYLBird.swift */; };
@@ -37,7 +44,6 @@
 		E2BEE9FA1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
 		E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
 		E2BEE9FD1C3481C200619149 /* JYLWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9FC1C3481C200619149 /* JYLWall.swift */; };
-		E2F500C81C37296500900B2F /* SleepingBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E2F500C71C37296500900B2F /* SleepingBird.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2348CC81C39AF1B009C4C78 /* JYLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLButton.swift; sourceTree = "<group>"; };
+		E2348CCB1C3A4715009C4C78 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E2348CCD1C3A4728009C4C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E2348CCF1C3A472F009C4C78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E2348CD11C3A4737009C4C78 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E2348CD41C3A49DE009C4C78 /* Fly Away-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fly Away-Bridging-Header.h"; sourceTree = "<group>"; };
+		E2348CD71C3A4A5D009C4C78 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		E26488D21C2D220C0089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAppDelegate.swift; sourceTree = "<group>"; };
 		E26488D41C2D220C0089E253 /* JYLBird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBird.swift; sourceTree = "<group>"; };
@@ -72,7 +85,6 @@
 		E2BEE9FC1C3481C200619149 /* JYLWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLWall.swift; sourceTree = "<group>"; };
 		E2CD41891C0BC2EA00DEB4EB /* Fly Away.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fly Away.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E2F500C71C37296500900B2F /* SleepingBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SleepingBird.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +99,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2348CD81C3A4A5D009C4C78 /* Chartboost.framework in Frameworks */,
+				E2348CD21C3A4737009C4C78 /* UIKit.framework in Frameworks */,
+				E2348CD01C3A472F009C4C78 /* CoreGraphics.framework in Frameworks */,
+				E2348CCE1C3A4728009C4C78 /* Foundation.framework in Frameworks */,
+				E2348CCC1C3A4715009C4C78 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2348CD31C3A49C1009C4C78 /* Framworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2348CD71C3A4A5D009C4C78 /* Chartboost.framework */,
+				E2348CD11C3A4737009C4C78 /* UIKit.framework */,
+				E2348CCF1C3A472F009C4C78 /* CoreGraphics.framework */,
+				E2348CCD1C3A4728009C4C78 /* Foundation.framework */,
+				E2348CCB1C3A4715009C4C78 /* StoreKit.framework */,
+			);
+			name = Framworks;
+			sourceTree = "<group>";
+		};
 		E26488D11C2D220C0089E253 /* FlyAway */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +133,7 @@
 				E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */,
 				E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */,
 				E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */,
+				E2348CD41C3A49DE009C4C78 /* Fly Away-Bridging-Header.h */,
 			);
 			path = FlyAway;
 			sourceTree = "<group>";
@@ -116,6 +146,7 @@
 				E26488D91C2D220C0089E253 /* JYLSpikes.swift */,
 				E2BEE9CE1C30703B00619149 /* JYLGround.swift */,
 				E2BEE9FC1C3481C200619149 /* JYLWall.swift */,
+				E2348CC81C39AF1B009C4C78 /* JYLButton.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -164,6 +195,7 @@
 				E2F500C91C37296A00900B2F /* Assets */,
 				E26488D11C2D220C0089E253 /* FlyAway */,
 				E2BEE9DC1C30A03A00619149 /* Fly AwayTests */,
+				E2348CD31C3A49C1009C4C78 /* Framworks */,
 				E2CD418A1C0BC2EA00DEB4EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -181,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */,
-				E2F500C71C37296500900B2F /* SleepingBird.atlas */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -276,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A4F1371C35C16C00F72CEB /* Dosis-SemiBold.ttf in Resources */,
-				E2F500C81C37296500900B2F /* SleepingBird.atlas in Resources */,
 				E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */,
 				E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */,
 			);
@@ -296,6 +326,7 @@
 				E2BEE9EF1C30A37C00619149 /* JYLSpikes.swift in Sources */,
 				E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */,
 				E2BEE9F11C30B22200619149 /* EasyStages.swift in Sources */,
+				E2348CCA1C39E69E009C4C78 /* JYLButton.swift in Sources */,
 				E2BEE9EA1C30A36E00619149 /* JYLBounceColors.swift in Sources */,
 				E2BEE9EB1C30A37000619149 /* JYLAppDelegate.swift in Sources */,
 				E2BEE9E71C30A09700619149 /* JYLBirdTest.swift in Sources */,
@@ -315,6 +346,7 @@
 				E26488DF1C2D220C0089E253 /* JYLBird.swift in Sources */,
 				E26488E11C2D220C0089E253 /* JYLMainGameScene.swift in Sources */,
 				E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */,
+				E2348CC91C39AF1B009C4C78 /* JYLButton.swift in Sources */,
 				E2BEE9F71C30BF6300619149 /* EasyStages.swift in Sources */,
 				E26488DE1C2D220C0089E253 /* JYLAppDelegate.swift in Sources */,
 				E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */,
@@ -451,13 +483,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FlyAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.FlyAway;
 				PRODUCT_NAME = "Fly Away";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlyAway/Fly Away-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -466,13 +505,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FlyAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wwwww.FlyAway;
 				PRODUCT_NAME = "Fly Away";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlyAway/Fly Away-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

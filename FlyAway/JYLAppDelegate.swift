@@ -21,6 +21,9 @@ class OBAppDelegate: UIResponder, UIApplicationDelegate {
     mainVc.view.frame = self.window!.frame
     self.window?.rootViewController = mainVc
     self.window?.makeKeyAndVisible()
+    
+    // Chartboost
+    Chartboost.startWithAppId("568a0e7b8838097d77effd08", appSignature: "105af18e8f212c58eaa3d52b4cf6c0f3a9ede101", delegate: nil)
     return true
   }
 

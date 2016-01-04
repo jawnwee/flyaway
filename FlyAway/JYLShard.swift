@@ -19,11 +19,13 @@ enum ShardVelocity: UInt32 {
   case hardVelocity = 4
 }
 
+let ShardName = "shard"
+
 class JYLShard: SKSpriteNode {
   
-  let easyVelocity = CGVectorMake(150, 0)
-  let mediumVelocity = CGVectorMake(200, 0)
-  let hardVelocity = CGVectorMake(250, 0)
+  let easyVelocity = CGVectorMake(175, 0)
+  let mediumVelocity = CGVectorMake(235, 0)
+  let hardVelocity = CGVectorMake(260, 0)
   let shardDirection : ShardDirection
   
   init(direction: ShardDirection) {
@@ -52,6 +54,7 @@ class JYLShard: SKSpriteNode {
     self.physicsBody?.mass = 100
     self.physicsBody?.categoryBitMask = ColliderType.shard.rawValue
     self.physicsBody?.collisionBitMask = ColliderType.bird.rawValue
+    self.name = ShardName
     self.setScale(scaleFactor)
   }
   

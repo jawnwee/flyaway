@@ -21,7 +21,7 @@ class StageRunner : SKNode {
   let easyStages : EasyStages
   let mediumStages : MediumStages
   
-  init(currentScore: Int) {
+  override init() {
     self.easyStages = EasyStages.init()
     self.mediumStages = MediumStages.init()
     super.init()
