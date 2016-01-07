@@ -20,10 +20,12 @@ class StageRunner : SKNode {
   var stageIsRunning = false
   let easyStages : EasyStages
   let mediumStages : MediumStages
+  let hardStages : HardStages
   
   override init() {
     self.easyStages = EasyStages.init()
     self.mediumStages = MediumStages.init()
+    self.hardStages = HardStages.init()
     super.init()
     self.addChild(easyStages)
     self.addChild(mediumStages)
@@ -40,6 +42,14 @@ class StageRunner : SKNode {
     if !self.mediumStages.isRunning && currentScore >= 10 {
       self.mediumStages.runRandomStage()
     }
+    if !self.hardStages.isRunning && !self.mediumStages.isRunning && currentScore >= 35 {
+      let randomEasierStage = arc4random_uniform(5)
+      if randomEasierStage == 0 {
+        self.mediumStages.runRandomStage()
+      } else {
+        self.hardStages.runRandomStage()
+      }
+    }
     stageIsRunning = true 
   }
   
@@ -49,6 +59,9 @@ class StageRunner : SKNode {
     }
     if mediumStages.children.isEmpty {
       mediumStages.isRunning = false
+    }
+    if hardStages.children.isEmpty {
+      hardStages.isRunning = false
     }
   }
   

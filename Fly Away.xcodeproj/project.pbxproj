@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FD5E21E7A3EE5FCAFA2C9F6 /* libPods-Fly Away.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44194B8B8E9211E1674AFF28 /* libPods-Fly Away.a */; };
 		E2348CC91C39AF1B009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
 		E2348CCA1C39E69E009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
 		E2348CCC1C3A4715009C4C78 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CCB1C3A4715009C4C78 /* StoreKit.framework */; };
@@ -17,7 +18,7 @@
 		E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */; };
 		E26488DE1C2D220C0089E253 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */; };
 		E26488DF1C2D220C0089E253 /* JYLBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D41C2D220C0089E253 /* JYLBird.swift */; };
-		E26488E01C2D220C0089E253 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D51C2D220C0089E253 /* JYLBounceColors.swift */; };
+		E26488E01C2D220C0089E253 /* JYLFlyAwayColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D51C2D220C0089E253 /* JYLFlyAwayColors.swift */; };
 		E26488E11C2D220C0089E253 /* JYLMainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */; };
 		E26488E21C2D220C0089E253 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */; };
 		E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D81C2D220C0089E253 /* JYLShard.swift */; };
@@ -29,7 +30,7 @@
 		E2BEE9E71C30A09700619149 /* JYLBirdTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9E61C30A09700619149 /* JYLBirdTest.swift */; };
 		E2BEE9E81C30A22E00619149 /* JYLBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D41C2D220C0089E253 /* JYLBird.swift */; };
 		E2BEE9E91C30A36B00619149 /* JYLMainGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */; };
-		E2BEE9EA1C30A36E00619149 /* JYLBounceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D51C2D220C0089E253 /* JYLBounceColors.swift */; };
+		E2BEE9EA1C30A36E00619149 /* JYLFlyAwayColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D51C2D220C0089E253 /* JYLFlyAwayColors.swift */; };
 		E2BEE9EB1C30A37000619149 /* JYLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */; };
 		E2BEE9EC1C30A37400619149 /* JYLMainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */; };
 		E2BEE9ED1C30A37700619149 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D81C2D220C0089E253 /* JYLShard.swift */; };
@@ -44,6 +45,12 @@
 		E2BEE9FA1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
 		E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9F91C30C0C300619149 /* StageRunner.swift */; };
 		E2BEE9FD1C3481C200619149 /* JYLWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9FC1C3481C200619149 /* JYLWall.swift */; };
+		E2E874BD1C3BB29C00D95E3B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E874BC1C3BB29C00D95E3B /* GameKit.framework */; };
+		E2EB71921C3B8D640094A42D /* JYLModelMapping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2EB71901C3B8D640094A42D /* JYLModelMapping.xcdatamodeld */; };
+		E2EB71951C3B9B710094A42D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB71931C3B9B710094A42D /* User+CoreDataProperties.swift */; };
+		E2EB71961C3B9B710094A42D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB71931C3B9B710094A42D /* User+CoreDataProperties.swift */; };
+		E2EB71971C3B9B710094A42D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB71941C3B9B710094A42D /* User.swift */; };
+		E2EB71981C3B9B710094A42D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB71941C3B9B710094A42D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44194B8B8E9211E1674AFF28 /* libPods-Fly Away.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fly Away.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88317EEF3D73214624EF956A /* Pods-Fly Away.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fly Away.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fly Away/Pods-Fly Away.release.xcconfig"; sourceTree = "<group>"; };
 		E2348CC81C39AF1B009C4C78 /* JYLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLButton.swift; sourceTree = "<group>"; };
 		E2348CCB1C3A4715009C4C78 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E2348CCD1C3A4728009C4C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,7 +76,7 @@
 		E26488D21C2D220C0089E253 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAppDelegate.swift; sourceTree = "<group>"; };
 		E26488D41C2D220C0089E253 /* JYLBird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBird.swift; sourceTree = "<group>"; };
-		E26488D51C2D220C0089E253 /* JYLBounceColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLBounceColors.swift; sourceTree = "<group>"; };
+		E26488D51C2D220C0089E253 /* JYLFlyAwayColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLFlyAwayColors.swift; sourceTree = "<group>"; };
 		E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameScene.swift; sourceTree = "<group>"; };
 		E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLMainGameViewController.swift; sourceTree = "<group>"; };
 		E26488D81C2D220C0089E253 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
@@ -85,6 +94,11 @@
 		E2BEE9FC1C3481C200619149 /* JYLWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLWall.swift; sourceTree = "<group>"; };
 		E2CD41891C0BC2EA00DEB4EB /* Fly Away.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fly Away.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2E874BC1C3BB29C00D95E3B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		E2EB71911C3B8D640094A42D /* JYLModelMapping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JYLModelMapping.xcdatamodel; sourceTree = "<group>"; };
+		E2EB71931C3B9B710094A42D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2EB71941C3B9B710094A42D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F980B75CECD26B0F88649146 /* Pods-Fly Away.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fly Away.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fly Away/Pods-Fly Away.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +115,35 @@
 			files = (
 				E2348CD81C3A4A5D009C4C78 /* Chartboost.framework in Frameworks */,
 				E2348CD21C3A4737009C4C78 /* UIKit.framework in Frameworks */,
+				E2E874BD1C3BB29C00D95E3B /* GameKit.framework in Frameworks */,
 				E2348CD01C3A472F009C4C78 /* CoreGraphics.framework in Frameworks */,
 				E2348CCE1C3A4728009C4C78 /* Foundation.framework in Frameworks */,
 				E2348CCC1C3A4715009C4C78 /* StoreKit.framework in Frameworks */,
+				5FD5E21E7A3EE5FCAFA2C9F6 /* libPods-Fly Away.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A4D3025D2AB4D43C00E0957 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F980B75CECD26B0F88649146 /* Pods-Fly Away.debug.xcconfig */,
+				88317EEF3D73214624EF956A /* Pods-Fly Away.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7D9355D187F58F9FB9F117E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2E874BC1C3BB29C00D95E3B /* GameKit.framework */,
+				44194B8B8E9211E1674AFF28 /* libPods-Fly Away.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E2348CD31C3A49C1009C4C78 /* Framworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +163,7 @@
 				E26488E81C2E24D10089E253 /* Stages */,
 				E26488E71C2D247A0089E253 /* Models */,
 				E26488D31C2D220C0089E253 /* JYLAppDelegate.swift */,
-				E26488D51C2D220C0089E253 /* JYLBounceColors.swift */,
+				E26488D51C2D220C0089E253 /* JYLFlyAwayColors.swift */,
 				E26488D61C2D220C0089E253 /* JYLMainGameScene.swift */,
 				E26488D71C2D220C0089E253 /* JYLMainGameViewController.swift */,
 				E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */,
@@ -147,6 +181,9 @@
 				E2BEE9CE1C30703B00619149 /* JYLGround.swift */,
 				E2BEE9FC1C3481C200619149 /* JYLWall.swift */,
 				E2348CC81C39AF1B009C4C78 /* JYLButton.swift */,
+				E2EB71901C3B8D640094A42D /* JYLModelMapping.xcdatamodeld */,
+				E2EB71931C3B9B710094A42D /* User+CoreDataProperties.swift */,
+				E2EB71941C3B9B710094A42D /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -197,6 +234,8 @@
 				E2BEE9DC1C30A03A00619149 /* Fly AwayTests */,
 				E2348CD31C3A49C1009C4C78 /* Framworks */,
 				E2CD418A1C0BC2EA00DEB4EB /* Products */,
+				6A4D3025D2AB4D43C00E0957 /* Pods */,
+				7D9355D187F58F9FB9F117E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,9 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2CD41AA1C0BC2EA00DEB4EB /* Build configuration list for PBXNativeTarget "Fly Away" */;
 			buildPhases = (
+				CF6FCE38F74DD05397D6DAB8 /* Check Pods Manifest.lock */,
 				E2CD41851C0BC2EA00DEB4EB /* Sources */,
 				E2CD41861C0BC2EA00DEB4EB /* Frameworks */,
 				E2CD41871C0BC2EA00DEB4EB /* Resources */,
+				FFC00EC8AEA2B4BC989D224E /* Embed Pods Frameworks */,
+				FDEFA2E9040B4DAA144E5690 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,6 +314,11 @@
 					E2CD41881C0BC2EA00DEB4EB = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 6UN3N9H6B4;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -314,6 +361,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF6FCE38F74DD05397D6DAB8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FDEFA2E9040B4DAA144E5690 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fly Away/Pods-Fly Away-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFC00EC8AEA2B4BC989D224E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fly Away/Pods-Fly Away-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E2BEE9D71C30A03A00619149 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,13 +416,15 @@
 			files = (
 				E2BEE9F31C30B26D00619149 /* MediumStages.swift in Sources */,
 				E2BEE9EE1C30A37A00619149 /* JYLGround.swift in Sources */,
+				E2EB71961C3B9B710094A42D /* User+CoreDataProperties.swift in Sources */,
 				E2BEE9E81C30A22E00619149 /* JYLBird.swift in Sources */,
 				E2BEE9ED1C30A37700619149 /* JYLShard.swift in Sources */,
 				E2BEE9EF1C30A37C00619149 /* JYLSpikes.swift in Sources */,
 				E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */,
+				E2EB71981C3B9B710094A42D /* User.swift in Sources */,
 				E2BEE9F11C30B22200619149 /* EasyStages.swift in Sources */,
 				E2348CCA1C39E69E009C4C78 /* JYLButton.swift in Sources */,
-				E2BEE9EA1C30A36E00619149 /* JYLBounceColors.swift in Sources */,
+				E2BEE9EA1C30A36E00619149 /* JYLFlyAwayColors.swift in Sources */,
 				E2BEE9EB1C30A37000619149 /* JYLAppDelegate.swift in Sources */,
 				E2BEE9E71C30A09700619149 /* JYLBirdTest.swift in Sources */,
 				E2BEE9F51C30B27300619149 /* HardStages.swift in Sources */,
@@ -343,15 +440,18 @@
 			files = (
 				E2BEE9F81C30BF6600619149 /* HardStages.swift in Sources */,
 				E2BEE9CF1C30703B00619149 /* JYLGround.swift in Sources */,
+				E2EB71951C3B9B710094A42D /* User+CoreDataProperties.swift in Sources */,
 				E26488DF1C2D220C0089E253 /* JYLBird.swift in Sources */,
+				E2EB71921C3B8D640094A42D /* JYLModelMapping.xcdatamodeld in Sources */,
 				E26488E11C2D220C0089E253 /* JYLMainGameScene.swift in Sources */,
 				E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */,
+				E2EB71971C3B9B710094A42D /* User.swift in Sources */,
 				E2348CC91C39AF1B009C4C78 /* JYLButton.swift in Sources */,
 				E2BEE9F71C30BF6300619149 /* EasyStages.swift in Sources */,
 				E26488DE1C2D220C0089E253 /* JYLAppDelegate.swift in Sources */,
 				E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */,
 				E26488E21C2D220C0089E253 /* JYLMainGameViewController.swift in Sources */,
-				E26488E01C2D220C0089E253 /* JYLBounceColors.swift in Sources */,
+				E26488E01C2D220C0089E253 /* JYLFlyAwayColors.swift in Sources */,
 				E2BEE9FA1C30C0C300619149 /* StageRunner.swift in Sources */,
 				E2BEE9F61C30BF6000619149 /* MediumStages.swift in Sources */,
 				E2BEE9FD1C3481C200619149 /* JYLWall.swift in Sources */,
@@ -481,15 +581,18 @@
 		};
 		E2CD41AB1C0BC2EA00DEB4EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F980B75CECD26B0F88649146 /* Pods-Fly Away.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_OPTIMIZATION_LEVEL = 3;
 				INFOPLIST_FILE = FlyAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -503,11 +606,13 @@
 		};
 		E2CD41AC1C0BC2EA00DEB4EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88317EEF3D73214624EF956A /* Pods-Fly Away.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -553,6 +658,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2EB71901C3B8D640094A42D /* JYLModelMapping.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E2EB71911C3B8D640094A42D /* JYLModelMapping.xcdatamodel */,
+			);
+			currentVersion = E2EB71911C3B8D640094A42D /* JYLModelMapping.xcdatamodel */;
+			path = JYLModelMapping.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2CD41811C0BC2EA00DEB4EB /* Project object */;
 }
