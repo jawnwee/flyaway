@@ -42,6 +42,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   let scoreLabel = SKLabelNode(fontNamed: "Dosis-SemiBold")
   let title = SKSpriteNode.init(imageNamed: "title")
   let instructions = SKSpriteNode.init(imageNamed: "instructions")
+  var scoreNumberLabel = SKLabelNode(fontNamed: "Dosis-SemiBold")
+  var highScoreNumberLabel = SKLabelNode(fontNamed: "Dosis-SemiBold")
   let leftIntroShard = JYLShard.init(direction: ShardDirection.left)
   let rightIntroShard = JYLShard.init(direction: ShardDirection.right)
   var managedObjectContext: NSManagedObjectContext
@@ -84,8 +86,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     let location = touches.first!.locationInNode(self)
     let node = self.nodeAtPoint(location)
     if node.name == RestartButtonName {
-      Chartboost.showInterstitial(CBLocationGameOver)
       restart()
+      Chartboost.showInterstitial(CBLocationGameOver)
     } else if node.name == ScoresButtonName{
       NSNotificationCenter.defaultCenter().postNotificationName("showGameCenter", object: nil)
     } else {
@@ -219,6 +221,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame),
       CGRectGetMidY(self.frame) * 1.65);
     self.addChild(scoreLabel)
+    self.addChild(scoreNumberLabel)
+    self.addChild(highScoreNumberLabel)
   }
   
   func layoutWorld() {
@@ -288,8 +292,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     highScoreLabelNode.position = CGPointMake(highScoreXPosition, height)
     self.addChild(scoreLabelNode)
     self.addChild(highScoreLabelNode)
-    let scoreNumberLabel = SKLabelNode(fontNamed: "Dosis-SemiBold")
-    let highScoreNumberLabel = SKLabelNode(fontNamed: "Dosis-SemiBold")
+    highScoreNumberLabel.hidden = false
+    scoreNumberLabel.hidden = false
     scoreNumberLabel.fontSize = 70 * scaleFactor
     scoreNumberLabel.fontColor = JYLFlyAwayColors.fontColor()
     scoreNumberLabel.position = CGPointMake(scoreLabelNode.position.x, scoreLabelNode.position.y * 0.85 * scaleFactor)
@@ -297,23 +301,25 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     highScoreNumberLabel.fontColor = JYLFlyAwayColors.fontColor()
     highScoreNumberLabel.position = CGPointMake(highScoreLabelNode.position.x, highScoreLabelNode.position.y * 0.85 * scaleFactor)
     let moc = self.managedObjectContext
+    var highScore = Int()
     moc.performBlockAndWait { () -> Void in
-      let highScore = self.user.highScore!.integerValue
+      highScore = self.user.highScore!.integerValue
       if self.score > highScore {
         self.user.highScore = self.score
-        highScoreNumberLabel.text = String(highScore)
         do {
           try moc.save()
         } catch {
           fatalError()
         }
-      } else {
-        highScoreNumberLabel.text = String(highScore)
       }
     }
+    if highScore == 0 {
+      let score = self.score
+      highScoreNumberLabel.text = String(score)
+    } else {
+      highScoreNumberLabel.text = String(highScore)
+    }
     scoreNumberLabel.text = String(self.score)
-    self.addChild(scoreNumberLabel)
-    self.addChild(highScoreNumberLabel)
   }
   
   func removeAllShards() {
@@ -337,6 +343,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   }
   
   func restart() {
+    scoreNumberLabel.hidden = true
+    highScoreNumberLabel.hidden = true
     self.removeAllActions()
     self.removeAllChildren()
     gameStarted = false
