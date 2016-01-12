@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5FD5E21E7A3EE5FCAFA2C9F6 /* libPods-Fly Away.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44194B8B8E9211E1674AFF28 /* libPods-Fly Away.a */; };
+		E20EA8871C3F968200D11906 /* JYLAcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20EA8861C3F968200D11906 /* JYLAcorn.swift */; };
+		E20EA8881C3F968200D11906 /* JYLAcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20EA8861C3F968200D11906 /* JYLAcorn.swift */; };
 		E2348CC91C39AF1B009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
 		E2348CCA1C39E69E009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
 		E2348CCC1C3A4715009C4C78 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CCB1C3A4715009C4C78 /* StoreKit.framework */; };
@@ -66,6 +68,7 @@
 /* Begin PBXFileReference section */
 		44194B8B8E9211E1674AFF28 /* libPods-Fly Away.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fly Away.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88317EEF3D73214624EF956A /* Pods-Fly Away.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fly Away.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fly Away/Pods-Fly Away.release.xcconfig"; sourceTree = "<group>"; };
+		E20EA8861C3F968200D11906 /* JYLAcorn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAcorn.swift; sourceTree = "<group>"; };
 		E2348CC81C39AF1B009C4C78 /* JYLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLButton.swift; sourceTree = "<group>"; };
 		E2348CCB1C3A4715009C4C78 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E2348CCD1C3A4728009C4C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,6 +187,7 @@
 				E2EB71901C3B8D640094A42D /* JYLModelMapping.xcdatamodeld */,
 				E2EB71931C3B9B710094A42D /* User+CoreDataProperties.swift */,
 				E2EB71941C3B9B710094A42D /* User.swift */,
+				E20EA8861C3F968200D11906 /* JYLAcorn.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -421,6 +425,7 @@
 				E2BEE9ED1C30A37700619149 /* JYLShard.swift in Sources */,
 				E2BEE9EF1C30A37C00619149 /* JYLSpikes.swift in Sources */,
 				E2BEE9FB1C30C0C300619149 /* StageRunner.swift in Sources */,
+				E20EA8881C3F968200D11906 /* JYLAcorn.swift in Sources */,
 				E2EB71981C3B9B710094A42D /* User.swift in Sources */,
 				E2BEE9F11C30B22200619149 /* EasyStages.swift in Sources */,
 				E2348CCA1C39E69E009C4C78 /* JYLButton.swift in Sources */,
@@ -445,6 +450,7 @@
 				E2EB71921C3B8D640094A42D /* JYLModelMapping.xcdatamodeld in Sources */,
 				E26488E11C2D220C0089E253 /* JYLMainGameScene.swift in Sources */,
 				E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */,
+				E20EA8871C3F968200D11906 /* JYLAcorn.swift in Sources */,
 				E2EB71971C3B9B710094A42D /* User.swift in Sources */,
 				E2348CC91C39AF1B009C4C78 /* JYLButton.swift in Sources */,
 				E2BEE9F71C30BF6300619149 /* EasyStages.swift in Sources */,

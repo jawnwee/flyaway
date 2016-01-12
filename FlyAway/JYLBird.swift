@@ -34,7 +34,7 @@ class JYLBird: SKSpriteNode {
       | ColliderType.ground.rawValue
       | ColliderType.spikes.rawValue)
     self.physicsBody?.contactTestBitMask =
-      (ColliderType.shard.rawValue | ColliderType.spikes.rawValue)
+      (ColliderType.shard.rawValue | ColliderType.spikes.rawValue | ColliderType.acorn.rawValue)
     self.setScale(scaleFactor)
     sleepNode.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
     self.addChild(sleepNode)

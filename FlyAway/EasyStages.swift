@@ -41,6 +41,7 @@ class EasyStages: SKNode {
     default:
       easyStage8()
     }
+    print(randomStage)
     isRunning = true
   }
   
@@ -48,198 +49,334 @@ class EasyStages: SKNode {
     var shard = JYLShard.init(direction: ShardDirection.left)
     shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
     self.addChild(shard)
-    let delay = SKAction.waitForDuration(1.5)
+    let height = shard.height()
+    let delay = SKAction.waitForDuration(0.5)
     let secondShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 100 * scaleFactor)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 2 * height)
       self.addChild(shard)
     }
     let thirdShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight +  4 * height)
+      self.addChild(shard)
+    }
+    let fourth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 8 * height)
+      self.addChild(shard)
+    }
+
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 12 * height)
+      self.addChild(shard)
+    }
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 14 * height)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, delay, fourth, delay, fifth, delay, sixth]))
+  }
+  
+  func easyStage1() {
+    var shard = JYLShard.init(direction: ShardDirection.right)
+    shard.position = CGPointMake(rightShardStart, shardMinStartHeight)
+    self.addChild(shard)
+    let height = shard.height()
+    let secondShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 4 * height)
+      self.addChild(shard)
+    }
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight +  6 * height)
+      self.addChild(shard)
+    }
+    let fourthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 8 * height)
+      self.addChild(shard)
+    }
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 14 * height)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, thirdShard, fourthShard, fifth]))
+  }
+  
+  func easyStage2() {
+    var shard = JYLShard.init(direction: ShardDirection.left)
+    shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+    self.addChild(shard)
+    let height = shard.height()
+    let delay = SKAction.waitForDuration(1.0)
+    let secondShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 2 * height)
+      self.addChild(shard)
+    }
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight +  4 * height)
+      self.addChild(shard)
+    }
+    let fourthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 6 * height)
+      self.addChild(shard)
+    }
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 8 * height)
+      self.addChild(shard)
+    }
+    
+    let seventh = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 12 * height)
+      self.addChild(shard)
+    }
+    let eigth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 14 * height)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, delay, fourthShard, delay, fifth, delay, seventh, delay, eigth]))
+  }
+  
+  func easyStage3() {
+    var shard = JYLShard.init(direction: ShardDirection.left)
+    shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+    self.addChild(shard)
+    let height = shard.height()
+    let delay = SKAction.waitForDuration(0.5)
+    let secondShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight)
+      self.addChild(shard)
+    }
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMaxStartHeight -  2 * height)
+      self.addChild(shard)
+    }
+    let fourthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 2 * height)
+      self.addChild(shard)
+    }
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 6 * height)
+      self.addChild(shard)
+    }
+    
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 6 * height)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, delay, thirdShard, fourthShard, delay, fifth, sixth]))
+  }
+  
+  func easyStage4() {
+    var shard = JYLShard.init(direction: ShardDirection.left)
+    shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+    self.addChild(shard)
+    let height = shard.height()
+    let secondShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, scaleFactor * (shardMinStartHeight + 2 * height))
+      self.addChild(shard)
+    }
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, scaleFactor * (shardMinStartHeight + 4 * height))
+      self.addChild(shard)
+    }
+    let fourthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, scaleFactor * (shardMinStartHeight + 7 * height))
+    }
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, scaleFactor * (shardMinStartHeight + 9 * height))
+      self.addChild(shard)
+    }
+    
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, scaleFactor * (shardMinStartHeight + 11 * height))
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, thirdShard, fourthShard, fifth, sixth]))
+  }
+  
+  func easyStage5() {
+    var shard = JYLShard.init(direction: ShardDirection.left)
+    shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+    self.addChild(shard)
+    let delay = SKAction.waitForDuration(1.5)
+    let secondShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.setVelocity(ShardVelocity.mediumVelocity)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 200 * scaleFactor)
+      self.addChild(shard)
+    }
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.setVelocity(ShardVelocity.mediumVelocity)
       shard.position = CGPointMake(leftShardStart, shardMaxStartHeight - 100 * scaleFactor)
       self.addChild(shard)
     }
     let fourthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 200 * scaleFactor)
-      self.addChild(shard)
-    }
-    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, fourthShard]))
-  }
-  
-  func easyStage1() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
-    shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 50 * scaleFactor)
-    self.addChild(shard)
-    let delay = SKAction.waitForDuration(1.5)
-    let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight)
-      self.addChild(shard)
-    }
-    let thirdShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 50 * scaleFactor)
-      self.addChild(shard)
-    }
-    let fourthShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 100 * scaleFactor)
-      self.addChild(shard)
-    }
-    
-    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, delay, fourthShard]))
-  }
-  
-  func easyStage2() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
-    shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 150 * scaleFactor)
-    self.addChild(shard)
-    let delay = SKAction.waitForDuration(1.5)
-    let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight)
-      self.addChild(shard)
-    }
-    let thirdShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 100 * scaleFactor)
-      self.addChild(shard)
-    }
-    let fourthShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.setVelocity(ShardVelocity.hardVelocity)
       shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 200 * scaleFactor)
-      self.addChild(shard)
-    }
-    let fifthShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 250 * scaleFactor )
-      self.addChild(shard)
-    }
-    
-    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, delay, fourthShard, delay, fifthShard]))
-  }
-  
-  func easyStage3() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
-    shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 200 * scaleFactor)
-    self.addChild(shard)
-    let delay = SKAction.waitForDuration(0.5)
-    let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 150 * scaleFactor)
-      self.addChild(shard)
-    }
-    let thirdShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight)
-      self.addChild(shard)
-    }
-    self.runAction(SKAction.sequence([delay, secondShard, thirdShard]))
-  }
-  
-  func easyStage4() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
-    shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 200 * scaleFactor)
-    self.addChild(shard)
-    let delay = SKAction.waitForDuration(0.5)
-    let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 150 * scaleFactor)
-      self.addChild(shard)
-    }
-    let thirdShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 80 * scaleFactor)
-      self.addChild(shard)
-    }
-    let fourthShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight)
-      shard.setVelocity(ShardVelocity.mediumVelocity)
-      self.addChild(shard)
-    }
-    self.runAction(SKAction.sequence([secondShard, delay, thirdShard, delay, fourthShard]))
-  }
-  
-  func easyStage5() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
-    shard.position = CGPointMake(leftShardStart, shardMinStartHeight * scaleFactor)
-    shard.setVelocity(ShardVelocity.hardVelocity)
-    self.addChild(shard)
-    let delay = SKAction.waitForDuration(0.5)
-    let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 150 * scaleFactor)
-      self.addChild(shard)
-    }
-    self.runAction(SKAction.sequence([delay, secondShard]))
-  }
-  
-  func easyStage6() {
-    var shard = JYLShard.init(direction: ShardDirection.right)
-    shard.position = CGPointMake(rightShardStart, shardMaxStartHeight * scaleFactor)
-    shard.setVelocity(ShardVelocity.hardVelocity)
-    self.addChild(shard)
-    let delay = SKAction.waitForDuration(0.5)
-    let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 50 * scaleFactor)
-      self.addChild(shard)
-    }
-    let thirdShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 100 * scaleFactor)
-      self.addChild(shard)
-    }
-    let fourthShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
       self.addChild(shard)
     }
     self.runAction(SKAction.sequence([secondShard, thirdShard, delay, fourthShard]))
   }
   
-  func easyStage7() {
-    var shard = JYLShard.init(direction: ShardDirection.right)
-    shard.position = CGPointMake(rightShardStart, shardMinStartHeight * scaleFactor)
-    shard.setVelocity(ShardVelocity.hardVelocity)
+  func easyStage6() {
+    var shard = JYLShard.init(direction: ShardDirection.left)
+    shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
     self.addChild(shard)
+    let height = shard.height()
     let delay = SKAction.waitForDuration(0.5)
     let secondShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 150 * scaleFactor)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 2 * height)
       self.addChild(shard)
     }
-    self.runAction(SKAction.sequence([delay, secondShard]))
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight +  4 * height)
+      self.addChild(shard)
+    }
+    let fourthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 6 * height)
+      self.addChild(shard)
+    }
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 8 * height)
+      self.addChild(shard)
+    }
+    
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 12 * height)
+      shard.setVelocity(ShardVelocity.hardVelocity)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, delay, thirdShard, fourthShard, delay, fifth, sixth]))
+  }
+  
+  func easyStage7() {
+    var shard = JYLShard.init(direction: ShardDirection.right)
+    shard.position = CGPointMake(rightShardStart, shardMinStartHeight)
+    self.addChild(shard)
+    let height = shard.height()
+    let delay = SKAction.waitForDuration(0.5)
+    let secondShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 2 * height)
+      self.addChild(shard)
+    }
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight +  4 * height)
+      self.addChild(shard)
+    }
+    let fourthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 6 * height)
+      self.addChild(shard)
+    }
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 8 * height)
+      self.addChild(shard)
+    }
+    
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 12 * height)
+      shard.setVelocity(ShardVelocity.hardVelocity)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, delay, thirdShard, fourthShard, delay, fifth, sixth]))
   }
   
   func easyStage8() {
     var shard = JYLShard.init(direction: ShardDirection.right)
     shard.position = CGPointMake(rightShardStart, shardMinStartHeight)
+    shard.setVelocity(ShardVelocity.insaneVelocity)
     self.addChild(shard)
-    let delay = SKAction.waitForDuration(1.5)
+    let height = shard.height()
+    let delay = SKAction.waitForDuration(1.0)
     let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 100 * scaleFactor)
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 2 * height)
       self.addChild(shard)
     }
     let thirdShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 100 * scaleFactor)
+      shard.position = CGPointMake(rightShardStart, shardMinStartHeight +  4 * height)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
       self.addChild(shard)
     }
     let fourthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.left)
-      shard.position = CGPointMake(leftShardStart, shardMaxStartHeight )
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 6 * height)
       self.addChild(shard)
     }
-    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, fourthShard]))
+    let fifth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 8 * height)
+      self.addChild(shard)
+    }
+    
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 12 * height)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, delay, fourthShard, fifth, sixth]))
+  }
+  
+  func easyStage9() {
+    var shard = JYLShard.init(direction: ShardDirection.right)
+    let height = shard.height()
+    shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 4 * height)
+    shard.setVelocity(ShardVelocity.insaneVelocity)
+    self.addChild(shard)
+    let delay = SKAction.waitForDuration(1.0)
+    let secondShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 2 * height)
+      self.addChild(shard)
+    }
+    let thirdShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight +  6 * height)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
+      self.addChild(shard)
+    }
+    let fourthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 4 * height)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([delay, secondShard, thirdShard, delay, fourthShard]))
   }
   
 }

@@ -19,11 +19,11 @@ class JYLWall: SKSpriteNode {
     super.init(texture: nil, color: SKColor.clearColor(), size: CGSizeZero)
     if side == WallSide.left {
       self.physicsBody = SKPhysicsBody.init(edgeLoopFromRect:
-        CGRectMake(-50, 0, 3, screenHeight + 100))
+        CGRectMake(-50, 0, 3, screenHeight * 10))
       self.physicsBody?.categoryBitMask = ColliderType.leftWall.rawValue
     } else {
       self.physicsBody = SKPhysicsBody.init(edgeLoopFromRect:
-        CGRectMake(screenWidth + 50, 0, 3, screenHeight + 100))
+        CGRectMake(screenWidth + 50, 0, 3, screenHeight * 10))
       self.physicsBody?.categoryBitMask = ColliderType.rightWall.rawValue
     }
     self.physicsBody?.collisionBitMask = 0

@@ -17,6 +17,7 @@ enum ColliderType: UInt32 {
   case spikes = 8
   case leftWall = 16
   case rightWall = 32
+  case acorn = 64
 }
 
 let screenRect = UIScreen.mainScreen().bounds
@@ -48,6 +49,9 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   let rightIntroShard = JYLShard.init(direction: ShardDirection.right)
   var managedObjectContext: NSManagedObjectContext
   let user : User
+  var acorn = JYLAcorn.init()
+  var scoreOnceQueue: dispatch_queue_t = dispatch_queue_create(
+    "FlyAway.ScoreQueue", DISPATCH_QUEUE_SERIAL)
 
 // MARK: - Overrides
   init(size : CGSize, managedObjectContext : NSManagedObjectContext) {
@@ -123,10 +127,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
           bird.physicsBody?.velocity = CGVectorMake(0, 0)
           bird.physicsBody?.applyImpulse(bounceVectorForce)
           bird.chirp()
-          let turnRandom = arc4random_uniform(5)
-          if turnRandom == 0 {
-            bird.turn()
-          }
+          bird.turn()
         }
       }
     }
@@ -154,14 +155,29 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       removeActionForKey(GameStartActionString)
       gameOver()
     }
+    if (firstBody.categoryBitMask & ColliderType.bird.rawValue != 0)
+      && ((secondBody.categoryBitMask & ColliderType.acorn.rawValue != 0)) {
+        if secondBody.node?.parent != nil {
+          secondBody.node?.removeFromParent()
+          self.runAction(SKAction.sequence([
+            SKAction.waitForDuration(1.0),
+            SKAction.runBlock({ self.addAcorn() })
+          ]))
+        }
+    }
     if (firstBody.categoryBitMask & ColliderType.shard.rawValue != 0)
       && ((secondBody.categoryBitMask & ColliderType.rightWall.rawValue != 0)
-      || (secondBody.categoryBitMask & ColliderType.leftWall.rawValue != 0)) {
-        if firstBody.node?.parent != nil {
-          firstBody.node?.removeFromParent()
-          score++
-          scoreLabel.text = String(score)
-        }
+        || (secondBody.categoryBitMask & ColliderType.leftWall.rawValue != 0)) {
+          if firstBody.node?.parent != nil {
+            firstBody.node?.removeFromParent()
+          }
+          dispatch_sync(self.scoreOnceQueue, { () -> Void in
+            let stagesComplete = self.stageRunner.checkStages()
+            if stagesComplete {
+              self.score++
+              self.scoreLabel.text = String(self.score)
+            }
+          })
     }
   }
 
@@ -191,10 +207,11 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       CGRectGetMidY(self.frame) * 1.55);
     self.addChild(title)
     self.addChild(instructions)
-    leftIntroShard.position = CGPointMake(leftShardStart, shardMinStartHeight + (200 * scaleFactor))
+    let middleHeight = CGRectGetMidY(self.frame)
+    leftIntroShard.position = CGPointMake(leftShardStart, middleHeight + (100 * scaleFactor))
     leftIntroShard.physicsBody?.collisionBitMask = 0
     leftIntroShard.physicsBody?.categoryBitMask = 0
-    rightIntroShard.position = CGPointMake(rightShardStart, shardMaxStartHeight - (100 * scaleFactor))
+    rightIntroShard.position = CGPointMake(rightShardStart, middleHeight - (100 * scaleFactor))
     rightIntroShard.physicsBody?.collisionBitMask = 0
     rightIntroShard.physicsBody?.categoryBitMask = 0
     self.addChild(leftIntroShard)
@@ -203,9 +220,9 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       SKAction.sequence([
         SKAction.waitForDuration(5.0),
         SKAction.runBlock({
-          self.leftIntroShard.position = CGPointMake(leftShardStart, shardMinStartHeight + (200 * scaleFactor))
+          self.leftIntroShard.position = CGPointMake(leftShardStart, middleHeight + (100 * scaleFactor))
           self.leftIntroShard.setVelocity(ShardVelocity.easyVelocity)
-          self.rightIntroShard.position = CGPointMake(rightShardStart, shardMaxStartHeight - (100 * scaleFactor))
+          self.rightIntroShard.position = CGPointMake(rightShardStart, middleHeight - (100 * scaleFactor))
           self.rightIntroShard.setVelocity(ShardVelocity.easyVelocity)
         }),
         ])
@@ -286,7 +303,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     let scoreLabelNode = SKSpriteNode.init(texture: scoreLabelTexture)
     let highScoreLabelNode = SKSpriteNode.init(texture: highScoreLabelTexture)
     let sidePadding = 50 * scaleFactor
-    let height = (screenHeight * 0.85) / scaleFactor
+    let height = screenHeight * 0.85
     scoreLabelNode.position = CGPointMake(sidePadding + (scoreLabelNode.size.width / 2), height)
     let highScoreXPosition = screenWidth - sidePadding - (highScoreLabelNode.size.width / 2)
     highScoreLabelNode.position = CGPointMake(highScoreXPosition, height)
@@ -296,10 +313,10 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     scoreNumberLabel.hidden = false
     scoreNumberLabel.fontSize = 70 * scaleFactor
     scoreNumberLabel.fontColor = JYLFlyAwayColors.fontColor()
-    scoreNumberLabel.position = CGPointMake(scoreLabelNode.position.x, scoreLabelNode.position.y * 0.85 * scaleFactor)
+    scoreNumberLabel.position = CGPointMake(scoreLabelNode.position.x, scoreLabelNode.position.y * 0.85)
     highScoreNumberLabel.fontSize = 70 * scaleFactor
     highScoreNumberLabel.fontColor = JYLFlyAwayColors.fontColor()
-    highScoreNumberLabel.position = CGPointMake(highScoreLabelNode.position.x, highScoreLabelNode.position.y * 0.85 * scaleFactor)
+    highScoreNumberLabel.position = CGPointMake(highScoreLabelNode.position.x, highScoreLabelNode.position.y * 0.85)
     let moc = self.managedObjectContext
     var highScore = Int()
     moc.performBlockAndWait { () -> Void in
@@ -324,6 +341,9 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   
   func removeAllShards() {
     let fadeOutAnimation = SKAction.fadeOutWithDuration(0.5)
+    self.acorn.runAction(fadeOutAnimation) { () -> Void in
+      self.acorn.removeFromParent()
+    }
     self.stageRunner.runAction(fadeOutAnimation) { () -> Void in
       self.stageRunner.removeFromParent()
     }
@@ -333,6 +353,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     stageRunner = StageRunner.init()
     stageRunner.position = CGPointMake(0, 100)
     self.addChild(stageRunner)
+    addAcorn()
     let gameStartAction = SKAction.repeatActionForever(
       SKAction.sequence([
         SKAction.runBlock({ self.stageRunner.runStage(self.score) }),
@@ -340,6 +361,14 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       ])
     )
     runAction(gameStartAction, withKey: GameStartActionString)
+  }
+  
+  func addAcorn() {
+    let acorn = JYLAcorn.init()
+    let randomHeight = (shardMinStartHeight + acorn.size.height * 3) +
+      CGFloat(arc4random_uniform(UInt32(screenHeight - spikes.size.height - (shardMinStartHeight + acorn.size.height * 3))))
+    acorn.position = CGPointMake(AcornXPosition, randomHeight)
+    self.addChild(acorn)
   }
   
   func restart() {

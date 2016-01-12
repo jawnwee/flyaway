@@ -17,15 +17,18 @@ enum ShardVelocity: UInt32 {
   case easyVelocity = 1
   case mediumVelocity = 2
   case hardVelocity = 4
+  case insaneVelocity = 8
 }
 
 let ShardName = "shard"
 
+
 class JYLShard: SKSpriteNode {
   
-  let easyVelocity = CGVectorMake(175, 0)
-  let mediumVelocity = CGVectorMake(235, 0)
-  let hardVelocity = CGVectorMake(260, 0)
+  let easyVelocity = CGVectorMake(165, 0)
+  let mediumVelocity = CGVectorMake(200, 0)
+  let hardVelocity = CGVectorMake(250, 0)
+  let insaneVelocity = CGVectorMake(300, 0)
   let shardDirection : ShardDirection
   
   init(direction: ShardDirection) {
@@ -66,10 +69,16 @@ class JYLShard: SKSpriteNode {
       self.physicsBody?.velocity = mediumVelocity
     case ShardVelocity.hardVelocity:
       self.physicsBody?.velocity = hardVelocity
+    case ShardVelocity.insaneVelocity:
+      self.physicsBody?.velocity = insaneVelocity
     }
     if shardDirection == ShardDirection.right {
       self.physicsBody?.velocity.dx *= -1
     }
+  }
+  
+  func height() -> CGFloat {
+    return self.texture!.size().height + 2.0
   }
 
   required init?(coder aDecoder: NSCoder) {

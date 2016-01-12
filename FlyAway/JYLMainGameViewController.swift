@@ -31,18 +31,17 @@ class JYLMainGameViewController: UIViewController, GKGameCenterControllerDelegat
     let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
     self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
     self.managedObjectContext.persistentStoreCoordinator = psc
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-      let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-      let docURL = urls[urls.endIndex-1]
-      /* The directory the application uses to store the Core Data store file.
-      This code uses a file named "DataModel.sqlite" in the application's documents directory.
-      */
-      let storeURL = docURL.URLByAppendingPathComponent("DataModel.sqlite")
-      do {
-        try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
-      } catch {
-        fatalError("Error migrating store: \(error)")
-      }
+    
+    let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    let docURL = urls[urls.endIndex-1]
+    /* The directory the application uses to store the Core Data store file.
+    This code uses a file named "DataModel.sqlite" in the application's documents directory.
+    */
+    let storeURL = docURL.URLByAppendingPathComponent("JYLModelMapping.sqlite")
+    do {
+      try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
+    } catch {
+      fatalError("Error migrating store: \(error)")
     }
     super.init(nibName: nil, bundle: nil)
   }
