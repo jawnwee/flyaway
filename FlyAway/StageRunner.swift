@@ -55,15 +55,15 @@ class StageRunner : SKNode {
   
   func checkStages() -> Bool {
     var isComplete = false
-    if easyStages.children.isEmpty && stageIsRunning {
+    if easyStages.children.isEmpty && easyStages.isRunning {
       easyStages.isRunning = false
       stageIsRunning = false
       isComplete = true
-    } else if mediumStages.children.isEmpty && stageIsRunning {
+    } else if mediumStages.children.isEmpty && mediumStages.isRunning {
       stageIsRunning = false
       mediumStages.isRunning = false
       isComplete = true
-    } else if hardStages.children.isEmpty && stageIsRunning {
+    } else if hardStages.children.isEmpty && hardStages.isRunning {
       stageIsRunning = false
       hardStages.isRunning = false
       isComplete = true
