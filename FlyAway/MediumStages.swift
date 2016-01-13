@@ -23,21 +23,22 @@ class MediumStages: SKNode {
   
   
   func runRandomStage() {
-    let randomStage = Int(arc4random_uniform(6))
-    switch randomStage {
-    case 0:
-      mediumStage0()
-    case 1:
-      mediumStage1()
-    case 2:
-      mediumStage2()
-    case 3:
-      mediumStage3()
-    case 4:
-      mediumStage4()
-    default:
-      mediumStage5()
-    }
+//    let randomStage = Int(arc4random_uniform(6))
+//    switch randomStage {
+//    case 0:
+//      mediumStage0()
+//    case 1:
+//      mediumStage1()
+//    case 2:
+//      mediumStage2()
+//    case 3:
+//      mediumStage3()
+//    case 4:
+//      mediumStage4()
+//    default:
+//      mediumStage5()
+//    }
+    mediumStage4()
     isRunning = true
   }
   
@@ -45,28 +46,28 @@ class MediumStages: SKNode {
     var shard = JYLShard.init(direction: ShardDirection.left)
     shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
     self.addChild(shard)
-    let delay = SKAction.waitForDuration(1.5)
+    let delay = SKAction.waitForDuration(1.0)
     let secondShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.mediumVelocity)
+      shard.setVelocity(ShardVelocity.hardVelocity)
       shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 200 * scaleFactor)
       self.addChild(shard)
     }
     let thirdShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.mediumVelocity)
+      shard.setVelocity(ShardVelocity.hardVelocity)
       shard.position = CGPointMake(leftShardStart, shardMaxStartHeight - 100 * scaleFactor)
       self.addChild(shard)
     }
     let fourthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.mediumVelocity)
+      shard.setVelocity(ShardVelocity.hardVelocity)
       shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 200 * scaleFactor)
       self.addChild(shard)
     }
     let fifthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.mediumVelocity)
+      shard.setVelocity(ShardVelocity.hardVelocity)
       shard.position = CGPointMake(leftShardStart, shardMaxStartHeight - 100 * scaleFactor)
       self.addChild(shard)
     }
@@ -75,116 +76,142 @@ class MediumStages: SKNode {
   }
   
   func mediumStage1() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
-    shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+    var shard = JYLShard.init(direction: ShardDirection.right)
+    let height = shard.height()
+    shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 4 * height)
+    shard.setVelocity(ShardVelocity.mediumVelocity)
     self.addChild(shard)
-    let delay = SKAction.waitForDuration(1.5)
+    let delay = SKAction.waitForDuration(1.0)
     let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + 200 * scaleFactor)
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 2 * height)
       self.addChild(shard)
     }
     let thirdShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight +  6 * height)
       shard.setVelocity(ShardVelocity.mediumVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMaxStartHeight - 100 * scaleFactor)
       self.addChild(shard)
     }
     let fourthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.easyVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMaxStartHeight)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 8 * height)
       self.addChild(shard)
     }
-    self.runAction(SKAction.sequence([delay, secondShard, delay, thirdShard, fourthShard]))
+    self.runAction(SKAction.sequence([delay, secondShard, thirdShard, delay, fourthShard]))
   }
   
   func mediumStage2() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
+    var shard = JYLShard.init(direction: ShardDirection.right)
+    let height = shard.height()
+    shard.position = CGPointMake(rightShardStart, shardMaxStartHeight)
+    shard.setVelocity(ShardVelocity.insaneVelocity)
+    self.addChild(shard)
     let delay = SKAction.waitForDuration(1.0)
-    let firstShard = SKAction.runBlock {
-      shard.setVelocity(ShardVelocity.easyVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
-      self.addChild(shard)
-    }
     let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + (50 * scaleFactor))
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 2 * height)
       self.addChild(shard)
     }
     let thirdShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + (150 * scaleFactor))
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight -  4 * height)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
       self.addChild(shard)
     }
     let fourthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight -  6 * height)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
       self.addChild(shard)
     }
-    self.runAction(SKAction.sequence([firstShard, secondShard, thirdShard, delay, fourthShard]))
+    let fifthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+      shard.setVelocity(ShardVelocity.insaneVelocity)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, thirdShard, fourthShard, delay, fifthShard]))
   }
   
   func mediumStage3() {
-    var shard = JYLShard.init(direction: ShardDirection.left)
-    let delay = SKAction.waitForDuration(0.5)
-    let firstShard = SKAction.runBlock {
-      shard.setVelocity(ShardVelocity.easyVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
-      self.addChild(shard)
-    }
+    var shard = JYLShard.init(direction: ShardDirection.right)
+    let height = shard.height()
+    shard.position = CGPointMake(rightShardStart, shardMaxStartHeight)
+    shard.setVelocity(ShardVelocity.slugVelocity)
+    self.addChild(shard)
     let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + (50 * scaleFactor))
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.setVelocity(ShardVelocity.slugVelocity)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 2 * height)
       self.addChild(shard)
     }
     let thirdShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.easyVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + (150 * scaleFactor))
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight -  4 * height)
+      shard.setVelocity(ShardVelocity.slugVelocity)
       self.addChild(shard)
     }
     let fourthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + (200 * scaleFactor))
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight -  6 * height)
+      shard.setVelocity(ShardVelocity.slugVelocity)
       self.addChild(shard)
     }
-    self.runAction(SKAction.sequence([firstShard, delay, secondShard, delay, thirdShard, delay, fourthShard]))
+    let fifthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+      shard.setVelocity(ShardVelocity.slugVelocity)
+      self.addChild(shard)
+    }
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 2 * height)
+      shard.setVelocity(ShardVelocity.slugVelocity)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, thirdShard, fourthShard, fifthShard, sixth]))
   }
   
   func mediumStage4() {
     var shard = JYLShard.init(direction: ShardDirection.right)
-    let delay = SKAction.waitForDuration(0.5)
-    let firstShard = SKAction.runBlock {
-      shard.setVelocity(ShardVelocity.easyVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight)
-      self.addChild(shard)
-    }
+    let height = shard.height()
+    shard.position = CGPointMake(rightShardStart, shardMaxStartHeight)
+    shard.setVelocity(ShardVelocity.mediumVelocity)
+    self.addChild(shard)
     let secondShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + (50 * scaleFactor))
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.setVelocity(ShardVelocity.mediumVelocity)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight - 2 * height)
       self.addChild(shard)
     }
     let thirdShard = SKAction.runBlock {
-      shard = JYLShard.init(direction: ShardDirection.left)
-      shard.setVelocity(ShardVelocity.easyVelocity)
-      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + (150 * scaleFactor))
+      shard = JYLShard.init(direction: ShardDirection.right)
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight -  4 * height)
+      shard.setVelocity(ShardVelocity.mediumVelocity)
       self.addChild(shard)
     }
     let fourthShard = SKAction.runBlock {
       shard = JYLShard.init(direction: ShardDirection.right)
-      shard.setVelocity(ShardVelocity.hardVelocity)
-      shard.position = CGPointMake(rightShardStart, shardMinStartHeight + (200 * scaleFactor))
+      shard.position = CGPointMake(rightShardStart, shardMaxStartHeight -  6 * height)
+      shard.setVelocity(ShardVelocity.mediumVelocity)
       self.addChild(shard)
     }
-    self.runAction(SKAction.sequence([firstShard, secondShard, delay, thirdShard, delay, fourthShard]))
+    let fifthShard = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight)
+      shard.setVelocity(ShardVelocity.mediumVelocity)
+      self.addChild(shard)
+    }
+    let sixth = SKAction.runBlock {
+      shard = JYLShard.init(direction: ShardDirection.left)
+      shard.position = CGPointMake(leftShardStart, shardMinStartHeight + 2 * height)
+      shard.setVelocity(ShardVelocity.mediumVelocity)
+      self.addChild(shard)
+    }
+    self.runAction(SKAction.sequence([secondShard, thirdShard, fourthShard, fifthShard, sixth]))
   }
   
   func mediumStage5() {

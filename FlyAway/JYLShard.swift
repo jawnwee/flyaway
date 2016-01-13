@@ -18,6 +18,7 @@ enum ShardVelocity: UInt32 {
   case mediumVelocity = 2
   case hardVelocity = 4
   case insaneVelocity = 8
+  case slugVelocity = 16
 }
 
 let ShardName = "shard"
@@ -25,6 +26,7 @@ let ShardName = "shard"
 
 class JYLShard: SKSpriteNode {
   
+  let slugVelocity = CGVectorMake(100, 0)
   let easyVelocity = CGVectorMake(165, 0)
   let mediumVelocity = CGVectorMake(200, 0)
   let hardVelocity = CGVectorMake(250, 0)
@@ -71,6 +73,8 @@ class JYLShard: SKSpriteNode {
       self.physicsBody?.velocity = hardVelocity
     case ShardVelocity.insaneVelocity:
       self.physicsBody?.velocity = insaneVelocity
+    case ShardVelocity.slugVelocity:
+      self.physicsBody?.velocity = slugVelocity
     }
     if shardDirection == ShardDirection.right {
       self.physicsBody?.velocity.dx *= -1

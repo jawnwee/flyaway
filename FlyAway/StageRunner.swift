@@ -42,10 +42,10 @@ class StageRunner : SKNode {
     if !self.mediumStages.isRunning && currentScore >= 10 {
       self.mediumStages.runRandomStage()
     }
-    if !self.hardStages.isRunning && !self.mediumStages.isRunning && currentScore >= 20 {
+    if !self.hardStages.isRunning && currentScore >= 25 {
       let randomEasierStage = arc4random_uniform(5)
       if randomEasierStage == 0 {
-        self.mediumStages.runRandomStage()
+        self.easyStages.runRandomStage()
       } else {
         self.hardStages.runRandomStage()
       }
