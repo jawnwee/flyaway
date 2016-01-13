@@ -36,6 +36,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   let background : SKSpriteNode
   let GameStartActionString = "GameStart"
   let ShardIntroActionKey = "IntroShards"
+  let AddAcornActionKey = "AddAcorns"
   var tapped = false
   var gameStarted = false
   var score : Int = 0
@@ -50,6 +51,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   var managedObjectContext: NSManagedObjectContext
   let user : User
   var acorn = JYLAcorn.init()
+  var acornAdded = false
   var scoreOnceQueue: dispatch_queue_t = dispatch_queue_create(
     "FlyAway.ScoreQueue", DISPATCH_QUEUE_SERIAL)
 
@@ -66,6 +68,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       if result.isEmpty {
         self.user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.managedObjectContext) as! User
         self.user.highScore = 0
+        self.user.acorns = 0
         self.user.playerId = player.playerID
         try moc.save()
       } else {
@@ -91,7 +94,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     let node = self.nodeAtPoint(location)
     if node.name == RestartButtonName {
       restart()
-      Chartboost.showInterstitial(CBLocationGameOver)
+      //Chartboost.showInterstitial(CBLocationGameOver)
     } else if node.name == ScoresButtonName{
       NSNotificationCenter.defaultCenter().postNotificationName("showGameCenter", object: nil)
     } else {
@@ -152,17 +155,31 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       && (secondBody.categoryBitMask & ColliderType.shard.rawValue != 0))
       || ((firstBody.categoryBitMask & ColliderType.bird.rawValue != 0)
       && (secondBody.categoryBitMask & ColliderType.spikes.rawValue != 0)) {
+      self.acorn.physicsBody?.categoryBitMask = 0
       removeActionForKey(GameStartActionString)
+      removeActionForKey(AddAcornActionKey)
       gameOver()
     }
     if (firstBody.categoryBitMask & ColliderType.bird.rawValue != 0)
       && ((secondBody.categoryBitMask & ColliderType.acorn.rawValue != 0)) {
         if secondBody.node?.parent != nil {
-          secondBody.node?.removeFromParent()
+          let acorn = secondBody.node as! JYLAcorn
+          acorn.plusOne()
           self.runAction(SKAction.sequence([
-            SKAction.waitForDuration(1.0),
+            SKAction.waitForDuration(2.0),
             SKAction.runBlock({ self.addAcorn() })
-          ]))
+            ]), withKey: AddAcornActionKey)
+          let moc = self.managedObjectContext
+          moc.performBlockAndWait { () -> Void in
+            var acorns = self.user.acorns!.integerValue
+            acorns++
+            self.user.acorns = NSInteger(acorns)
+            do {
+              try moc.save()
+            } catch {
+              fatalError()
+            }
+          }
         }
     }
     if (firstBody.categoryBitMask & ColliderType.shard.rawValue != 0)
@@ -262,11 +279,12 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     let gameOverBackgroundTexture = SKTexture.init(imageNamed: "gameoverBackground")
     self.background.texture = gameOverBackgroundTexture
     bird.playDead()
+    self.acorn.removeFromParent()
     removeAllShards()
     let gapBetweenButtons = 60 * scaleFactor
     let restartButton = JYLButton.init(buttonType: ButtonType.restart)
     restartButton.position = CGPointMake(CGRectGetMidX(self.frame),
-      CGRectGetMidY(self.frame) - (100 * scaleFactor))
+      CGRectGetMidY(self.frame) - (90 * scaleFactor))
     let shareButton = JYLButton.init(buttonType: ButtonType.share)
     shareButton.position = CGPointMake(restartButton.position.x, restartButton.position.y + gapBetweenButtons)
     let scoresButton = JYLButton.init(buttonType: ButtonType.scores)
@@ -290,6 +308,25 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
         
       }
     })
+    let moc = self.managedObjectContext
+    var acornCount = Int()
+    moc.performBlockAndWait { () -> Void in
+      acornCount = self.user.acorns!.integerValue
+    }
+    let shift = acornCount % 10
+    let acornCountLabel = SKLabelNode(fontNamed: "Dosis-SemiBold")
+    let acorn = JYLAcorn.init()
+    acornCountLabel.fontColor = JYLFlyAwayColors.plusOneColor()
+    acornCountLabel.fontSize = 50.0 * scaleFactor
+    acornCountLabel.position = CGPointMake(screenWidth - acorn.size.width,
+      restartButton.position.y - gapBetweenButtons - (28 * scaleFactor))
+    acornCountLabel.text = String(acornCount)
+    acorn.removeAllActions()
+    acorn.physicsBody?.categoryBitMask = 0
+    acorn.position = CGPointMake(screenWidth - acorn.size.width + (acorn.size.width * CGFloat(shift)),
+      restartButton.position.y - gapBetweenButtons - (10 * scaleFactor))
+    self.addChild(acorn)
+    self.addChild(acornCountLabel)
     self.addChild(restartButton)
     self.addChild(shareButton)
     self.addChild(scoresButton)
@@ -341,10 +378,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   
   func removeAllShards() {
     let fadeOutAnimation = SKAction.fadeOutWithDuration(0.5)
-    self.acorn.runAction(fadeOutAnimation) { () -> Void in
-      self.acorn.removeFromParent()
-    }
     self.stageRunner.runAction(fadeOutAnimation) { () -> Void in
+      self.acorn.removeFromParent()
       self.stageRunner.removeFromParent()
     }
   }
@@ -364,7 +399,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   }
   
   func addAcorn() {
-    let acorn = JYLAcorn.init()
+    acorn = JYLAcorn.init()
     let randomHeight = (shardMinStartHeight + acorn.size.height * 3) +
       CGFloat(arc4random_uniform(UInt32(screenHeight - spikes.size.height - (shardMinStartHeight + acorn.size.height * 3))))
     acorn.position = CGPointMake(AcornXPosition, randomHeight)

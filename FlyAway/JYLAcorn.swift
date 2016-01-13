@@ -28,7 +28,22 @@ class JYLAcorn: SKSpriteNode {
         ])
     )
     self.runAction(hanging)
-
+  }
+  
+  func plusOne() {
+    self.physicsBody?.categoryBitMask = 0
+    let plusOne = SKLabelNode(fontNamed: "Dosis-SemiBold")
+    plusOne.text = "+1"
+    plusOne.fontColor = JYLFlyAwayColors.plusOneColor()
+    plusOne.fontSize = 20.0 * scaleFactor
+    plusOne.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+    self.addChild(plusOne)
+    let moveYAnimate = SKAction.moveBy(CGVectorMake(0, 3.0), duration: 0.3)
+    let fadeOut = SKAction.fadeOutWithDuration(0.3);
+    let plusOneAnimate = SKAction.sequence([moveYAnimate, fadeOut, SKAction.runBlock({
+      self.removeFromParent()
+    })])
+    self.runAction(plusOneAnimate)
   }
   
   required init?(coder aDecoder: NSCoder) {

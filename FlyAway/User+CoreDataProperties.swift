@@ -14,7 +14,9 @@ import CoreData
 
 extension User {
 
-    @NSManaged var highScore: NSNumber?
-    @NSManaged var playerId: String?
+  @NSManaged var hasAds: NSNumber?
+  @NSManaged var acorns: NSNumber?
+  @NSManaged var highScore: NSNumber?
+  @NSManaged var playerId: String?
 
 }
