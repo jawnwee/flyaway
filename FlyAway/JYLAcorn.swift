@@ -17,6 +17,7 @@ class JYLAcorn: SKSpriteNode {
     super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
     self.physicsBody = SKPhysicsBody.init(circleOfRadius: texture.size().width / 2)
     self.physicsBody?.categoryBitMask = ColliderType.acorn.rawValue
+    self.physicsBody?.contactTestBitMask = ColliderType.shard.rawValue
     self.physicsBody?.dynamic = false
     let leftRotation = SKAction.rotateByAngle(CGFloat(-M_PI / 8.0) , duration: 0.5)
     let rightRotation = SKAction.rotateByAngle(CGFloat(M_PI / 8.0) , duration: 0.5)
@@ -38,8 +39,8 @@ class JYLAcorn: SKSpriteNode {
     plusOne.fontSize = 20.0 * scaleFactor
     plusOne.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
     self.addChild(plusOne)
-    let moveYAnimate = SKAction.moveBy(CGVectorMake(0, 3.0), duration: 0.3)
-    let fadeOut = SKAction.fadeOutWithDuration(0.3);
+    let moveYAnimate = SKAction.moveBy(CGVectorMake(0, 2.0), duration: 0.2)
+    let fadeOut = SKAction.fadeOutWithDuration(0.2);
     let plusOneAnimate = SKAction.sequence([moveYAnimate, fadeOut, SKAction.runBlock({
       self.removeFromParent()
     })])

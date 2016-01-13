@@ -52,11 +52,13 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   let user : User
   var acorn = JYLAcorn.init()
   var acornAdded = false
-  var scoreOnceQueue: dispatch_queue_t = dispatch_queue_create(
-    "FlyAway.ScoreQueue", DISPATCH_QUEUE_SERIAL)
+  let AppGroupId = "group.FlyAway"
+  let sharedUserDefaults : NSUserDefaults
+  weak var mainVc : JYLMainGameViewController?
 
 // MARK: - Overrides
   init(size : CGSize, managedObjectContext : NSManagedObjectContext) {
+    sharedUserDefaults = NSUserDefaults.init(suiteName: AppGroupId)!
     let backgroundTexture = SKTexture.init(imageNamed: "background")
     self.background = SKSpriteNode.init(texture: backgroundTexture)
     self.managedObjectContext = managedObjectContext
@@ -68,7 +70,6 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       if result.isEmpty {
         self.user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.managedObjectContext) as! User
         self.user.highScore = 0
-        self.user.acorns = 0
         self.user.playerId = player.playerID
         try moc.save()
       } else {
@@ -94,10 +95,21 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     let node = self.nodeAtPoint(location)
     if node.name == RestartButtonName {
       restart()
-      //Chartboost.showInterstitial(CBLocationGameOver)
-    } else if node.name == ScoresButtonName{
+      Chartboost.showInterstitial(CBLocationGameOver)
+    } else if node.name == ScoresButtonName {
       NSNotificationCenter.defaultCenter().postNotificationName("showGameCenter", object: nil)
-    } else {
+    } else if node.name == ShareButtonName {
+      let shareText = "OMG! You just scored \(score) points in Fly Away!"
+      UIGraphicsBeginImageContextWithOptions(UIScreen.mainScreen().bounds.size, false, 0);
+      self.view!.drawViewHierarchyInRect(view!.bounds, afterScreenUpdates: true)
+      let image:UIImage = UIGraphicsGetImageFromCurrentImageContext();
+      UIGraphicsEndImageContext();
+      let objectsToShare = [shareText, image]
+      let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+      activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+      mainVc!.presentViewController(activityVC, animated: true, completion: nil)
+    }
+    else {
       if introShown == false {
         self.removeActionForKey(ShardIntroActionKey)
         let moveTitleUp = SKAction.moveBy(CGVectorMake(0, 400), duration: 0.5)
@@ -161,7 +173,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       gameOver()
     }
     if (firstBody.categoryBitMask & ColliderType.bird.rawValue != 0)
-      && ((secondBody.categoryBitMask & ColliderType.acorn.rawValue != 0)) {
+      && (secondBody.categoryBitMask & ColliderType.acorn.rawValue != 0) {
         if secondBody.node?.parent != nil {
           let acorn = secondBody.node as! JYLAcorn
           acorn.plusOne()
@@ -169,17 +181,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
             SKAction.waitForDuration(2.0),
             SKAction.runBlock({ self.addAcorn() })
             ]), withKey: AddAcornActionKey)
-          let moc = self.managedObjectContext
-          moc.performBlockAndWait { () -> Void in
-            var acorns = self.user.acorns!.integerValue
-            acorns++
-            self.user.acorns = NSInteger(acorns)
-            do {
-              try moc.save()
-            } catch {
-              fatalError()
-            }
-          }
+          self.score++
+          self.scoreLabel.text = String(self.score)
         }
     }
     if (firstBody.categoryBitMask & ColliderType.shard.rawValue != 0)
@@ -188,13 +191,16 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
           if firstBody.node?.parent != nil {
             firstBody.node?.removeFromParent()
           }
-          dispatch_sync(self.scoreOnceQueue, { () -> Void in
-            let stagesComplete = self.stageRunner.checkStages()
-            if stagesComplete {
-              self.score++
-              self.scoreLabel.text = String(self.score)
-            }
-          })
+    }
+    if (firstBody.categoryBitMask & ColliderType.shard.rawValue != 0)
+      && (secondBody.categoryBitMask & ColliderType.acorn.rawValue != 0) {
+      if secondBody.node?.parent != nil {
+        secondBody.node?.removeFromParent()
+        self.runAction(SKAction.sequence([
+          SKAction.waitForDuration(2.0),
+          SKAction.runBlock({ self.addAcorn() })
+          ]), withKey: AddAcornActionKey)
+      }
     }
   }
 
@@ -308,25 +314,6 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
         
       }
     })
-    let moc = self.managedObjectContext
-    var acornCount = Int()
-    moc.performBlockAndWait { () -> Void in
-      acornCount = self.user.acorns!.integerValue
-    }
-    let shift = acornCount % 10
-    let acornCountLabel = SKLabelNode(fontNamed: "Dosis-SemiBold")
-    let acorn = JYLAcorn.init()
-    acornCountLabel.fontColor = JYLFlyAwayColors.plusOneColor()
-    acornCountLabel.fontSize = 50.0 * scaleFactor
-    acornCountLabel.position = CGPointMake(screenWidth - acorn.size.width,
-      restartButton.position.y - gapBetweenButtons - (28 * scaleFactor))
-    acornCountLabel.text = String(acornCount)
-    acorn.removeAllActions()
-    acorn.physicsBody?.categoryBitMask = 0
-    acorn.position = CGPointMake(screenWidth - acorn.size.width + (acorn.size.width * CGFloat(shift)),
-      restartButton.position.y - gapBetweenButtons - (10 * scaleFactor))
-    self.addChild(acorn)
-    self.addChild(acornCountLabel)
     self.addChild(restartButton)
     self.addChild(shareButton)
     self.addChild(scoresButton)

@@ -59,6 +59,7 @@ class JYLMainGameViewController: UIViewController, GKGameCenterControllerDelegat
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentGameCenter:", name:"showGameCenter", object: nil)
     let sceneSize = CGSizeMake(self.view.frame.width, self.view.frame.height)
     let scene = JYLMainGameScene.init(size: sceneSize, managedObjectContext: self.managedObjectContext)
+    scene.mainVc = self
     let skView = self.view as! SKView
     skView.showsFPS = false
     skView.showsNodeCount = false
