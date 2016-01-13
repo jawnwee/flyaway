@@ -36,19 +36,22 @@ class StageRunner : SKNode {
   }
   
   func runStage(currentScore: Int) {
-    if !self.easyStages.isRunning && currentScore < 10 {
+//    if !self.easyStages.isRunning && currentScore < 10 {
+//      self.easyStages.runRandomStage()
+//    }
+//    if !self.mediumStages.isRunning && currentScore >= 10 {
+//      self.mediumStages.runRandomStage()
+//    }
+//    if !self.hardStages.isRunning && currentScore >= 25 {
+//      let randomEasierStage = arc4random_uniform(5)
+//      if randomEasierStage == 0 {
+//        self.easyStages.runRandomStage()
+//      } else {
+//        self.hardStages.runRandomStage()
+//      }
+//    }
+    if !self.easyStages.isRunning {
       self.easyStages.runRandomStage()
-    }
-    if !self.mediumStages.isRunning && currentScore >= 10 {
-      self.mediumStages.runRandomStage()
-    }
-    if !self.hardStages.isRunning && currentScore >= 25 {
-      let randomEasierStage = arc4random_uniform(5)
-      if randomEasierStage == 0 {
-        self.easyStages.runRandomStage()
-      } else {
-        self.hardStages.runRandomStage()
-      }
     }
     stageIsRunning = true
   }
