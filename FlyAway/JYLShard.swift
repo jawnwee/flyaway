@@ -30,7 +30,7 @@ class JYLShard: SKSpriteNode {
   let easyVelocity = CGVectorMake(165, 0)
   let mediumVelocity = CGVectorMake(200, 0)
   let hardVelocity = CGVectorMake(250, 0)
-  let insaneVelocity = CGVectorMake(300, 0)
+  let insaneVelocity = CGVectorMake(275, 0)
   let shardDirection : ShardDirection
   
   init(direction: ShardDirection) {

@@ -34,6 +34,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   let spikes = JYLSpikes.init()
   var introShown = false
   let background : SKSpriteNode
+  var soundButton : JYLButton
   let GameStartActionString = "GameStart"
   let ShardIntroActionKey = "IntroShards"
   let AddAcornActionKey = "AddAcorns"
@@ -54,6 +55,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
   var acornAdded = false
   let AppGroupId = "group.FlyAway"
   let sharedUserDefaults : NSUserDefaults
+  var sound : Bool
   weak var mainVc : JYLMainGameViewController?
 
 // MARK: - Overrides
@@ -70,6 +72,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       if result.isEmpty {
         self.user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.managedObjectContext) as! User
         self.user.highScore = 0
+        self.user.hasAds = true
+        self.user.mute = false
         self.user.playerId = player.playerID
         try moc.save()
       } else {
@@ -78,6 +82,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     } catch {
       fatalError("Failed to fetch user: \(error)")
     }
+    self.sound = !(self.user.mute!.boolValue)
+    soundButton = JYLButton.init(buttonType: ButtonType.soundOn)
     super.init(size: size)
     self.physicsWorld.contactDelegate = self
   }
@@ -95,9 +101,22 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     let node = self.nodeAtPoint(location)
     if node.name == RestartButtonName {
       restart()
-      Chartboost.showInterstitial(CBLocationGameOver)
+      if self.user.hasAds!.boolValue {
+        let randomAd = arc4random_uniform(2)
+        if randomAd == 0 {
+          if Chartboost.hasInterstitial(CBLocationGameOver) == true{
+            Chartboost.showInterstitial(CBLocationGameOver)
+          }
+          else {
+            Chartboost.cacheInterstitial(CBLocationGameOver)
+          }
+        }
+      }
     } else if node.name == ScoresButtonName {
       NSNotificationCenter.defaultCenter().postNotificationName("showGameCenter", object: nil)
+    } else if node.name == RateButtonName {
+      let url = "itms-apps://itunes.apple.com/app/1072278717"
+      UIApplication.sharedApplication().openURL(NSURL(string : url)!)
     } else if node.name == ShareButtonName {
       let shareText = "OMG! You just scored \(score) points in Fly Away!"
       UIGraphicsBeginImageContextWithOptions(UIScreen.mainScreen().bounds.size, false, 0);
@@ -108,8 +127,32 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
       activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
       mainVc!.presentViewController(activityVC, animated: true, completion: nil)
-    }
-    else {
+    } else if node.name == SoundSpriteName {
+      let soundTexture : SKTexture
+      if sound {
+        soundTexture = SKTexture.init(imageNamed: "sound_off")
+      } else {
+        soundTexture = SKTexture.init(imageNamed: "sound_on")
+      }
+      soundButton.texture = soundTexture
+      let moc = self.managedObjectContext
+      moc.performBlockAndWait({ () -> Void in
+        if self.sound {
+          self.user.mute = true
+          self.sound = false
+        } else {
+          self.user.mute = false
+          self.sound = true
+        }
+      })
+      do {
+        try moc.save()
+      } catch {
+        fatalError("Failed to fetch user: \(error)")
+      }
+    } else if node.name == NoAdsSpriteName {
+      self.mainVc?.purchaseRemoveAds()
+    } else {
       if introShown == false {
         self.removeActionForKey(ShardIntroActionKey)
         let moveTitleUp = SKAction.moveBy(CGVectorMake(0, 400), duration: 0.5)
@@ -129,6 +172,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
         introShown = true
       }
       if gameStarted == false {
+        Chartboost.cacheInterstitial(CBLocationGameOver)
         gameStarted = true
         bird.stopSleeping()
         let startGame = SKAction.sequence([
@@ -143,6 +187,9 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
           bird.physicsBody?.applyImpulse(bounceVectorForce)
           bird.chirp()
           bird.turn()
+          if sound {
+            runAction(SKAction.playSoundFileNamed("birdswish.m4a", waitForCompletion: false))
+          }
         }
       }
     }
@@ -167,6 +214,9 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       && (secondBody.categoryBitMask & ColliderType.shard.rawValue != 0))
       || ((firstBody.categoryBitMask & ColliderType.bird.rawValue != 0)
       && (secondBody.categoryBitMask & ColliderType.spikes.rawValue != 0)) {
+      if sound {
+        runAction(SKAction.playSoundFileNamed("dead bird.wav.m4a", waitForCompletion: false))
+      }
       self.acorn.physicsBody?.categoryBitMask = 0
       removeActionForKey(GameStartActionString)
       removeActionForKey(AddAcornActionKey)
@@ -176,6 +226,9 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       && (secondBody.categoryBitMask & ColliderType.acorn.rawValue != 0) {
         if secondBody.node?.parent != nil {
           let acorn = secondBody.node as! JYLAcorn
+          if sound {
+            runAction(SKAction.playSoundFileNamed("Collecting.m4a", waitForCompletion: false))
+          }
           acorn.plusOne()
           self.runAction(SKAction.sequence([
             SKAction.waitForDuration(2.0),
@@ -183,6 +236,9 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
             ]), withKey: AddAcornActionKey)
           self.score++
           self.scoreLabel.text = String(self.score)
+          if score == 5000 {
+            gameOver()
+          }
         }
     }
     if (firstBody.categoryBitMask & ColliderType.shard.rawValue != 0)
@@ -287,10 +343,28 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     bird.playDead()
     self.acorn.removeFromParent()
     removeAllShards()
-    let gapBetweenButtons = 60 * scaleFactor
+    let gapBetweenButtons = 50 * scaleFactor
+    let widthGapBetweenButtons = 3.5 * scaleFactor * scaleFactor * scaleFactor * scaleFactor
+    if sound {
+      soundButton = JYLButton.init(buttonType: ButtonType.soundOn)
+    } else {
+      soundButton = JYLButton.init(buttonType: ButtonType.soundOff)
+    }
+    soundButton.yScale = scaleFactor
+    soundButton.xScale = scaleFactor * 0.95
+    soundButton.position = CGPointMake(CGRectGetMidX(self.frame) + soundButton.size.width / 2 + widthGapBetweenButtons,
+      CGRectGetMidY(self.frame) - (120 * scaleFactor))
+    var noAdsButton:JYLButton
+    noAdsButton = JYLButton.init(buttonType: ButtonType.noAds)
+    noAdsButton.name = NoAdsSpriteName
+    noAdsButton.yScale = scaleFactor
+    noAdsButton.xScale = scaleFactor * 0.95
+    noAdsButton.position = CGPointMake(CGRectGetMidX(self.frame) - noAdsButton.size.width / 2 - widthGapBetweenButtons,
+      CGRectGetMidY(self.frame) - (120 * scaleFactor))
+    self.addChild(noAdsButton)
     let restartButton = JYLButton.init(buttonType: ButtonType.restart)
     restartButton.position = CGPointMake(CGRectGetMidX(self.frame),
-      CGRectGetMidY(self.frame) - (90 * scaleFactor))
+      soundButton.position.y + gapBetweenButtons)
     let shareButton = JYLButton.init(buttonType: ButtonType.share)
     shareButton.position = CGPointMake(restartButton.position.x, restartButton.position.y + gapBetweenButtons)
     let scoresButton = JYLButton.init(buttonType: ButtonType.scores)
@@ -298,8 +372,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     let rateButton = JYLButton.init(buttonType: ButtonType.rate)
     rateButton.position = CGPointMake(scoresButton.position.x, scoresButton.position.y + gapBetweenButtons)
     let enhanceAnimation = SKAction.repeatActionForever(SKAction.sequence([
-      SKAction.scaleTo(1.1, duration: 0.5),
-      SKAction.scaleTo(1.0, duration: 0.5)
+      SKAction.scaleTo(1.1 * scaleFactor, duration: 0.5),
+      SKAction.scaleTo(1.0 * scaleFactor, duration: 0.5)
       ]))
     rateButton.runAction(enhanceAnimation)
     setGameOverScoreLabels()
@@ -314,6 +388,8 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
         
       }
     })
+
+    self.addChild(soundButton)
     self.addChild(restartButton)
     self.addChild(shareButton)
     self.addChild(scoresButton)

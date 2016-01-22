@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Fly Away.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E2CD41A01C0BC2EA00DEB4EB"
+               BuildableName = "Dodge The Shards.xctest"
+               BlueprintName = "Fly Away Tests"
+               ReferencedContainer = "container:Fly Away.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,16 +42,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E2CD41A01C0BC2EA00DEB4EB"
-               BuildableName = "Dodge The Shards.xctest"
-               BlueprintName = "Fly Away Tests"
-               ReferencedContainer = "container:Fly Away.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference

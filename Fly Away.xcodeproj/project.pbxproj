@@ -10,6 +10,8 @@
 		5FD5E21E7A3EE5FCAFA2C9F6 /* libPods-Fly Away.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44194B8B8E9211E1674AFF28 /* libPods-Fly Away.a */; };
 		E20EA8871C3F968200D11906 /* JYLAcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20EA8861C3F968200D11906 /* JYLAcorn.swift */; };
 		E20EA8881C3F968200D11906 /* JYLAcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20EA8861C3F968200D11906 /* JYLAcorn.swift */; };
+		E23115F21C4AC7050070F4B1 /* Collecting.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E23115F11C4AC7050070F4B1 /* Collecting.m4a */; };
+		E23115F31C4AC7050070F4B1 /* Collecting.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E23115F11C4AC7050070F4B1 /* Collecting.m4a */; };
 		E2348CC91C39AF1B009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
 		E2348CCA1C39E69E009C4C78 /* JYLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2348CC81C39AF1B009C4C78 /* JYLButton.swift */; };
 		E2348CCC1C3A4715009C4C78 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2348CCB1C3A4715009C4C78 /* StoreKit.framework */; };
@@ -26,6 +28,11 @@
 		E26488E31C2D220C0089E253 /* JYLShard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D81C2D220C0089E253 /* JYLShard.swift */; };
 		E26488E41C2D220C0089E253 /* JYLSpikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26488D91C2D220C0089E253 /* JYLSpikes.swift */; };
 		E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */; };
+		E297A9C31C4760B700B68C82 /* birdswish.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E297A9C11C4760B700B68C82 /* birdswish.m4a */; };
+		E297A9C41C4760B700B68C82 /* birdswish.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E297A9C11C4760B700B68C82 /* birdswish.m4a */; };
+		E297A9C51C4760B700B68C82 /* dead bird.wav.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E297A9C21C4760B700B68C82 /* dead bird.wav.m4a */; };
+		E297A9C61C4760B700B68C82 /* dead bird.wav.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E297A9C21C4760B700B68C82 /* dead bird.wav.m4a */; };
+		E297A9C71C48DAF800B68C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */; };
 		E2A4F1341C34B64C00F72CEB /* JYLWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9FC1C3481C200619149 /* JYLWall.swift */; };
 		E2A4F1371C35C16C00F72CEB /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2A4F1361C35C12600F72CEB /* Dosis-SemiBold.ttf */; };
 		E2BEE9CF1C30703B00619149 /* JYLGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BEE9CE1C30703B00619149 /* JYLGround.swift */; };
@@ -82,6 +89,7 @@
 		44194B8B8E9211E1674AFF28 /* libPods-Fly Away.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fly Away.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88317EEF3D73214624EF956A /* Pods-Fly Away.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fly Away.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fly Away/Pods-Fly Away.release.xcconfig"; sourceTree = "<group>"; };
 		E20EA8861C3F968200D11906 /* JYLAcorn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLAcorn.swift; sourceTree = "<group>"; };
+		E23115F11C4AC7050070F4B1 /* Collecting.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collecting.m4a; sourceTree = "<group>"; };
 		E2348CC81C39AF1B009C4C78 /* JYLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLButton.swift; sourceTree = "<group>"; };
 		E2348CCB1C3A4715009C4C78 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E2348CCD1C3A4728009C4C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +106,8 @@
 		E26488D81C2D220C0089E253 /* JYLShard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLShard.swift; sourceTree = "<group>"; };
 		E26488D91C2D220C0089E253 /* JYLSpikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLSpikes.swift; sourceTree = "<group>"; };
 		E26488DA1C2D220C0089E253 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E297A9C11C4760B700B68C82 /* birdswish.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = birdswish.m4a; sourceTree = "<group>"; };
+		E297A9C21C4760B700B68C82 /* dead bird.wav.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dead bird.wav.m4a"; sourceTree = "<group>"; };
 		E2A4F1361C35C12600F72CEB /* Dosis-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.ttf"; sourceTree = "<group>"; };
 		E2BEE9CE1C30703B00619149 /* JYLGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLGround.swift; sourceTree = "<group>"; };
 		E2BEE9DB1C30A03A00619149 /* Fly AwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fly AwayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +226,16 @@
 			name = Stages;
 			sourceTree = "<group>";
 		};
+		E297A9C01C47609B00B68C82 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E297A9C11C4760B700B68C82 /* birdswish.m4a */,
+				E23115F11C4AC7050070F4B1 /* Collecting.m4a */,
+				E297A9C21C4760B700B68C82 /* dead bird.wav.m4a */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		E2A4F1351C35C11B00F72CEB /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +288,7 @@
 		E2F500C91C37296A00900B2F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E297A9C01C47609B00B68C82 /* Sounds */,
 				E2CD41B21C0D857F00DEB4EB /* Assets.xcassets */,
 			);
 			name = Assets;
@@ -367,6 +388,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E297A9C61C4760B700B68C82 /* dead bird.wav.m4a in Resources */,
+				E297A9C71C48DAF800B68C82 /* Assets.xcassets in Resources */,
+				E23115F31C4AC7050070F4B1 /* Collecting.m4a in Resources */,
+				E297A9C41C4760B700B68C82 /* birdswish.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +399,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E297A9C31C4760B700B68C82 /* birdswish.m4a in Resources */,
 				E2A4F1371C35C16C00F72CEB /* Dosis-SemiBold.ttf in Resources */,
+				E297A9C51C4760B700B68C82 /* dead bird.wav.m4a in Resources */,
 				E26488E51C2D220C0089E253 /* Launch Screen.storyboard in Resources */,
+				E23115F21C4AC7050070F4B1 /* Collecting.m4a in Resources */,
 				E26488831C2BF24C0089E253 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

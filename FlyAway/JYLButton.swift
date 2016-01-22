@@ -12,16 +12,23 @@ let RestartButtonName = "restart"
 let ShareButtonName = "share"
 let RateButtonName = "rate"
 let ScoresButtonName = "scores"
+let SoundSpriteName = "SoundSpriteName"
+let NoAdsSpriteName = "NoAdsSpriteName"
 
-enum ButtonType: UInt32 {
+enum ButtonType: UInt64 {
   case restart = 1
   case share = 2
   case rate = 4
   case scores = 8
+  case soundOn = 16
+  case soundOff = 32
+  case noAds = 64
 }
 
 
 class JYLButton: SKSpriteNode {
+  
+  
   
   init(buttonType : ButtonType) {
     let texture : SKTexture
@@ -39,9 +46,19 @@ class JYLButton: SKSpriteNode {
     case ButtonType.share:
       texture = SKTexture.init(imageNamed: "share")
       name = ShareButtonName
+    case ButtonType.soundOn:
+      texture = SKTexture.init(imageNamed: "sound_on")
+      name = SoundSpriteName
+    case ButtonType.soundOff:
+      texture = SKTexture.init(imageNamed: "sound_off")
+      name = SoundSpriteName
+    case ButtonType.noAds:
+      texture = SKTexture.init(imageNamed: "no_ads")
+      name = NoAdsSpriteName
     }
     super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
     self.name = name
+    self.setScale(scaleFactor)
   }
 
   required init?(coder aDecoder: NSCoder) {
