@@ -344,25 +344,26 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     self.acorn.removeFromParent()
     removeAllShards()
     let gapBetweenButtons = 50 * scaleFactor
-    let widthGapBetweenButtons = 3.5 * scaleFactor * scaleFactor * scaleFactor * scaleFactor
     if sound {
       soundButton = JYLButton.init(buttonType: ButtonType.soundOn)
     } else {
       soundButton = JYLButton.init(buttonType: ButtonType.soundOff)
     }
+    let restartButton = JYLButton.init(buttonType: ButtonType.restart)
     soundButton.yScale = scaleFactor
     soundButton.xScale = scaleFactor * 0.95
-    soundButton.position = CGPointMake(CGRectGetMidX(self.frame) + soundButton.size.width / 2 + widthGapBetweenButtons,
+    soundButton.anchorPoint = CGPointMake(1, 0.5);
+    soundButton.position = CGPointMake(CGRectGetMidX(self.frame) + restartButton.size.width / 2,
       CGRectGetMidY(self.frame) - (120 * scaleFactor))
     var noAdsButton:JYLButton
     noAdsButton = JYLButton.init(buttonType: ButtonType.noAds)
     noAdsButton.name = NoAdsSpriteName
     noAdsButton.yScale = scaleFactor
     noAdsButton.xScale = scaleFactor * 0.95
-    noAdsButton.position = CGPointMake(CGRectGetMidX(self.frame) - noAdsButton.size.width / 2 - widthGapBetweenButtons,
+    noAdsButton.anchorPoint = CGPointMake(0, 0.5);
+    noAdsButton.position = CGPointMake(CGRectGetMidX(self.frame) - restartButton.size.width / 2,
       CGRectGetMidY(self.frame) - (120 * scaleFactor))
     self.addChild(noAdsButton)
-    let restartButton = JYLButton.init(buttonType: ButtonType.restart)
     restartButton.position = CGPointMake(CGRectGetMidX(self.frame),
       soundButton.position.y + gapBetweenButtons)
     let shareButton = JYLButton.init(buttonType: ButtonType.share)
