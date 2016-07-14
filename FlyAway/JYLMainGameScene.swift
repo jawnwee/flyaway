@@ -102,7 +102,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     if node.name == RestartButtonName {
       restart()
       if self.user.hasAds!.boolValue {
-        let randomAd = arc4random_uniform(2)
+        let randomAd = arc4random_uniform(4)
         if randomAd == 0 {
           if Chartboost.hasInterstitial(CBLocationGameOver) == true{
             Chartboost.showInterstitial(CBLocationGameOver)
@@ -150,9 +150,13 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
       } catch {
         fatalError("Failed to fetch user: \(error)")
       }
-    } else if node.name == NoAdsSpriteName {
+    }
+    else if node.name == NoAdsSpriteName {
       self.mainVc?.purchaseRemoveAds()
-    } else {
+    } else if node.name == RestoreIAPSpriteName {
+      self.mainVc?.restoreIAPs()
+    }
+    else {
       if introShown == false {
         self.removeActionForKey(ShardIntroActionKey)
         let moveTitleUp = SKAction.moveBy(CGVectorMake(0, 400), duration: 0.5)
@@ -171,25 +175,25 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
         })
         introShown = true
       }
-      if gameStarted == false {
-        Chartboost.cacheInterstitial(CBLocationGameOver)
-        gameStarted = true
-        bird.stopSleeping()
-        let startGame = SKAction.sequence([
-                          SKAction.waitForDuration(2.0),
-                          SKAction.runBlock({ self.startGame() })
-                        ])
-        runAction(startGame)
-      } else {
-        if !bird.playingDead {
-          let bounceVectorForce = CGVector.init(dx: 0, dy: birdFlyingForce);
-          bird.physicsBody?.velocity = CGVectorMake(0, 0)
-          bird.physicsBody?.applyImpulse(bounceVectorForce)
-          bird.chirp()
-          bird.turn()
-          if sound {
-            runAction(SKAction.playSoundFileNamed("birdswish.m4a", waitForCompletion: false))
-          }
+    }
+    if gameStarted == false {
+      Chartboost.cacheInterstitial(CBLocationGameOver)
+      gameStarted = true
+      bird.stopSleeping()
+      let startGame = SKAction.sequence([
+                        SKAction.waitForDuration(2.0),
+                        SKAction.runBlock({ self.startGame() })
+                      ])
+      runAction(startGame)
+    } else {
+      if !bird.playingDead {
+        let bounceVectorForce = CGVector.init(dx: 0, dy: birdFlyingForce);
+        bird.physicsBody?.velocity = CGVectorMake(0, 0)
+        bird.physicsBody?.applyImpulse(bounceVectorForce)
+        bird.chirp()
+        bird.turn()
+        if sound {
+          runAction(SKAction.playSoundFileNamed("birdswish.m4a", waitForCompletion: false))
         }
       }
     }
@@ -351,7 +355,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     }
     let restartButton = JYLButton.init(buttonType: ButtonType.restart)
     soundButton.yScale = scaleFactor
-    soundButton.xScale = scaleFactor * 0.95
+    soundButton.xScale = scaleFactor * 0.90
     soundButton.anchorPoint = CGPointMake(1, 0.5);
     soundButton.position = CGPointMake(CGRectGetMidX(self.frame) + restartButton.size.width / 2,
       CGRectGetMidY(self.frame) - (120 * scaleFactor))
@@ -370,8 +374,10 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     shareButton.position = CGPointMake(restartButton.position.x, restartButton.position.y + gapBetweenButtons)
     let scoresButton = JYLButton.init(buttonType: ButtonType.scores)
     scoresButton.position = CGPointMake(shareButton.position.x, shareButton.position.y + gapBetweenButtons)
+    let restoreButton = JYLButton.init(buttonType: ButtonType.restoreIAP)
+    restoreButton.position = CGPointMake(scoresButton.position.x, scoresButton.position.y + gapBetweenButtons)
     let rateButton = JYLButton.init(buttonType: ButtonType.rate)
-    rateButton.position = CGPointMake(scoresButton.position.x, scoresButton.position.y + gapBetweenButtons)
+    rateButton.position = CGPointMake(restoreButton.position.x, restoreButton.position.y + gapBetweenButtons)
     let enhanceAnimation = SKAction.repeatActionForever(SKAction.sequence([
       SKAction.scaleTo(1.1 * scaleFactor, duration: 0.5),
       SKAction.scaleTo(1.0 * scaleFactor, duration: 0.5)
@@ -391,6 +397,7 @@ class JYLMainGameScene: SKScene, SKPhysicsContactDelegate {
     })
 
     self.addChild(soundButton)
+    self.addChild(restoreButton)
     self.addChild(restartButton)
     self.addChild(shareButton)
     self.addChild(scoresButton)

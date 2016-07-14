@@ -14,6 +14,7 @@ let RateButtonName = "rate"
 let ScoresButtonName = "scores"
 let SoundSpriteName = "SoundSpriteName"
 let NoAdsSpriteName = "NoAdsSpriteName"
+let RestoreIAPSpriteName = "RestoreIAPSpriteName"
 
 enum ButtonType: UInt64 {
   case restart = 1
@@ -23,6 +24,7 @@ enum ButtonType: UInt64 {
   case soundOn = 16
   case soundOff = 32
   case noAds = 64
+  case restoreIAP = 128
 }
 
 
@@ -55,6 +57,9 @@ class JYLButton: SKSpriteNode {
     case ButtonType.noAds:
       texture = SKTexture.init(imageNamed: "no_ads")
       name = NoAdsSpriteName
+    case ButtonType.restoreIAP:
+      texture = SKTexture.init(imageNamed: "restore")
+      name = RestoreIAPSpriteName
     }
     super.init(texture: texture, color: SKColor.clearColor(), size: texture.size())
     self.name = name

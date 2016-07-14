@@ -21,8 +21,6 @@ class JYLMainGameViewController: UIViewController, GKGameCenterControllerDelegat
   var gcDefaultLeaderBoard = String() // Stores the default leaderboardID
   var list = [SKProduct]()
   var p = SKProduct()
-  var adsRemoved = false
-  var isRestoringPurchases = true
   
   init() {
     // This resource is the same name as your xcdatamodeld contained in your project.
@@ -61,15 +59,6 @@ class JYLMainGameViewController: UIViewController, GKGameCenterControllerDelegat
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    if(SKPaymentQueue.canMakePayments()) {
-      let productID:NSSet = NSSet(objects: "wwwww.FlyAway.removeAds")
-      let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>)
-      
-      request.delegate = self
-      request.start()
-    } else {
-      print("please enable IAPS")
-    }
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "presentGameCenter:", name:"showGameCenter", object: nil)
     let sceneSize = CGSizeMake(self.view.frame.width, self.view.frame.height)
     let scene = JYLMainGameScene.init(size: sceneSize, managedObjectContext: self.managedObjectContext)
@@ -103,14 +92,20 @@ class JYLMainGameViewController: UIViewController, GKGameCenterControllerDelegat
     return true
   }
   
+  // MARK - Store Kit
+  func restoreIAPs() {
+    SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+    SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+  }
+  
   func purchaseRemoveAds() {
-    for product in list {
-      let prodID = product.productIdentifier
-      if(prodID == "wwwww.FlyAway.removeAds") {
-        p = product
-        buyProduct()
-        break;
-      }
+    if(SKPaymentQueue.canMakePayments()) {
+      let productID:NSSet = NSSet(objects: "wwwww.FlyAway.removeAds")
+      let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>)
+      request.delegate = self
+      request.start()
+    } else {
+      print("please enable IAPS")
     }
   }
   
@@ -135,82 +130,66 @@ class JYLMainGameViewController: UIViewController, GKGameCenterControllerDelegat
     } catch {
       fatalError("Failed to fetch user: \(error)")
     }
-    adsRemoved = true
-    if isRestoringPurchases {
-      let alert = UIAlertController(title: "Thank You", message:"Your purchase(s) were restored.", preferredStyle: .Alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-      self.presentViewController(alert, animated: true){}
-    }
-  }
-  
-  // MARK - Store Kit
-  func buyProduct() {
-    let pay = SKPayment(product: p)
-    SKPaymentQueue.defaultQueue().addTransactionObserver(self)
-    SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
-    if adsRemoved {
-      SKPaymentQueue.defaultQueue().addPayment(pay as SKPayment)
-    }
   }
   
   func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-    let myProduct = response.products
-    for product in myProduct {
-      list.append(product )
+    var validProduct : SKProduct
+    let count = response.products.count
+    if count > 0 {
+      validProduct = response.products[0]
+      print("Products Available!")
+      self.purchase(validProduct)
+    }
+    else {
+      NSLog("No products available");
     }
   }
   
+  func purchase(product: SKProduct) {
+    let payment = SKPayment(product: product)
+    SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+    SKPaymentQueue.defaultQueue().addPayment(payment as SKPayment)
+  }
+  
   func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue) {
-    for transaction in queue.transactions {
-      let t: SKPaymentTransaction = transaction
-      
-      let prodID = t.payment.productIdentifier as String
-      
-      switch prodID {
-      case "wwwww.FlyAway.removeAds":
-        removeAds()
-      default:
-        print("IAP not setup")
+    for transaction:AnyObject in queue.transactions {
+      let trans = transaction as! SKPaymentTransaction
+      if trans.transactionState == .Restored {
+        self.removeAds()
+        let alert = UIAlertController(title: "Thank You", message: "Your purchases have been restored", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        SKPaymentQueue.defaultQueue().finishTransaction(trans)
+        break
       }
     }
-    if adsRemoved == false {
-      isRestoringPurchases = false
-    }
   }
+
   
   func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
     for transaction:AnyObject in transactions {
       let trans = transaction as! SKPaymentTransaction
-      
       switch trans.transactionState {
-        
-      case .Purchased:
-        
-        let prodID = p.productIdentifier as String
+      case .Purchased, .Restored:
+        let prodID = trans.payment.productIdentifier as String
         switch prodID {
         case "wwwww.FlyAway.removeAds":
           removeAds()
+          queue.finishTransaction(trans)
         default:
           print("IAP not setup")
         }
-        
-        queue.finishTransaction(trans)
-        break;
+        break
       case .Failed:
         queue.finishTransaction(trans)
-        break;
+        break
+      case .Purchasing:
+        break
       default:
-        break;
+        break
         
       }
     }
-  }
-  
-  func finishTransaction(trans:SKPaymentTransaction) {
-    SKPaymentQueue.defaultQueue().finishTransaction(trans)
-  }
-  
-  func paymentQueue(queue: SKPaymentQueue, removedTransactions transactions: [SKPaymentTransaction]) {
   }
   
   // MARK - Game Center
